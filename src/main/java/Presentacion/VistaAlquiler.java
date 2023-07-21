@@ -95,7 +95,7 @@ public class VistaAlquiler extends javax.swing.JFrame {
         });
         jPanel1.add(bttn_alquilar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, 310, 40));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 450, 490));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 460, 490));
 
         pnl_header.setBackground(new java.awt.Color(255, 255, 255));
         pnl_header.setPreferredSize(new java.awt.Dimension(1220, 70));
@@ -112,14 +112,14 @@ public class VistaAlquiler extends javax.swing.JFrame {
         Pnl_vehiculos.setLayout(Pnl_vehiculosLayout);
         Pnl_vehiculosLayout.setHorizontalGroup(
             Pnl_vehiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 650, Short.MAX_VALUE)
+            .addGap(0, 690, Short.MAX_VALUE)
         );
         Pnl_vehiculosLayout.setVerticalGroup(
             Pnl_vehiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 570, Short.MAX_VALUE)
         );
 
-        getContentPane().add(Pnl_vehiculos, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 120, -1, -1));
+        getContentPane().add(Pnl_vehiculos, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 130, 690, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -31,6 +31,9 @@ public class Moto extends javax.swing.JPanel {
         TxtFld_buscarCarro = new javax.swing.JTextField();
         Bttn_buscar = new javax.swing.JButton();
 
+        setPreferredSize(new java.awt.Dimension(690, 570));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -45,31 +48,11 @@ public class Moto extends javax.swing.JPanel {
         jTable1.setMinimumSize(new java.awt.Dimension(650, 570));
         jScrollPane1.setViewportView(jTable1);
 
-        Bttn_buscar.setText("Buscar");
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 580, -1));
+        add(TxtFld_buscarCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 320, 30));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(TxtFld_buscarCarro, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(120, 120, 120)
-                        .addComponent(Bttn_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TxtFld_buscarCarro, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Bttn_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        Bttn_buscar.setText("Buscar");
+        add(Bttn_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, 140, 30));
     }// </editor-fold>//GEN-END:initComponents
 
 
