@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package Presentacion1;
+package Presentacion;
 
 /**
  *
  * @author ANGIE
  */
-public class Moto extends javax.swing.JPanel {
+public class Carro extends javax.swing.JPanel {
 
     /**
      * Creates new form Carro
      */
-    public Moto() {
+    public Carro() {
         initComponents();
     }
 
@@ -31,18 +31,19 @@ public class Moto extends javax.swing.JPanel {
         TxtFld_buscarCarro = new javax.swing.JTextField();
         Bttn_buscar = new javax.swing.JButton();
 
+        setMinimumSize(new java.awt.Dimension(700, 200));
+
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3"
+                "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jTable1.setMinimumSize(new java.awt.Dimension(650, 570));
         jScrollPane1.setViewportView(jTable1);
 
         Bttn_buscar.setText("Buscar");

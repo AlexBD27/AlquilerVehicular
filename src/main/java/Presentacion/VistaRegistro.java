@@ -1,4 +1,4 @@
-package Presentacion1;
+package Presentacion;
 
 public class VistaRegistro extends javax.swing.JFrame {
 
