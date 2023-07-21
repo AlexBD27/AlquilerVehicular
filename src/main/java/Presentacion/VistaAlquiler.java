@@ -50,38 +50,38 @@ public class VistaAlquiler extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Datos del Vehiculo");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 200, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 200, -1));
 
         Lbl_vehiculo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         Lbl_vehiculo.setText("Seleccionar Vehiculo:");
-        jPanel1.add(Lbl_vehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 170, -1));
+        jPanel1.add(Lbl_vehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 170, -1));
 
         CmbBx_tipoVehiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Carro", "Moto", "Bicicleta", " " }));
-        jPanel1.add(CmbBx_tipoVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 120, 30));
+        jPanel1.add(CmbBx_tipoVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 120, 30));
 
         txtFld_horasFacturadas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtFld_horasFacturadas.setPreferredSize(new java.awt.Dimension(71, 30));
-        jPanel1.add(txtFld_horasFacturadas, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, 310, -1));
+        jPanel1.add(txtFld_horasFacturadas, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, 310, -1));
 
         lbl_horasFacturadas.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_horasFacturadas.setText("Horas facturadas:");
-        jPanel1.add(lbl_horasFacturadas, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, -1, -1));
+        jPanel1.add(lbl_horasFacturadas, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, -1, -1));
 
         txtFld_hora.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtFld_hora.setPreferredSize(new java.awt.Dimension(71, 30));
-        jPanel1.add(txtFld_hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 310, -1));
+        jPanel1.add(txtFld_hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, 310, -1));
 
         lbl_horaRecogida.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_horaRecogida.setText("Hora recogida:");
-        jPanel1.add(lbl_horaRecogida, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
+        jPanel1.add(lbl_horaRecogida, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, -1, -1));
 
         txtFld_idVehiculo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtFld_idVehiculo.setPreferredSize(new java.awt.Dimension(71, 30));
-        jPanel1.add(txtFld_idVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 310, -1));
+        jPanel1.add(txtFld_idVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 310, -1));
 
         lbl_idVehiculo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_idVehiculo.setText("ID:");
-        jPanel1.add(lbl_idVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, -1, -1));
+        jPanel1.add(lbl_idVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, -1, -1));
 
         bttn_alquilar.setBackground(new java.awt.Color(51, 153, 255));
         bttn_alquilar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -93,7 +93,7 @@ public class VistaAlquiler extends javax.swing.JFrame {
                 bttn_alquilarActionPerformed(evt);
             }
         });
-        jPanel1.add(bttn_alquilar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, 310, 40));
+        jPanel1.add(bttn_alquilar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, 310, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 450, 490));
 

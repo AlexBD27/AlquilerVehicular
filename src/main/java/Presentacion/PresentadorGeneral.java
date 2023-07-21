@@ -13,7 +13,6 @@ public class PresentadorGeneral {
     private PresentadorAlquiler pAlquiler;
     private PresentadorVehiculo pVehiculo;
     private static PresentadorGeneral pGeneral;
-    /////////////////////////
 
     public PresentadorGeneral() {
     }
