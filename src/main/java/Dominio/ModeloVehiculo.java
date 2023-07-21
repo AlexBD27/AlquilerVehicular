@@ -16,7 +16,7 @@ public class ModeloVehiculo {
     private Bicicleta bicicletatmp;
     private int idVehiculo;
 
-    ModeloVehiculo() {
+    public ModeloVehiculo() {
 
     }
 
@@ -60,11 +60,11 @@ public class ModeloVehiculo {
         this.idVehiculo = idVehiculo;
     }
 
-public void setTipoVehiculo(String tipoVehiculo, int identificacion, String descripcion) {
+public void setTipoVehiculo(String tipoVehiculo) {
     switch (tipoVehiculo) {
-        case "CARRO" -> this.vehiculo = new Carro(identificacion, descripcion);
-        case "MOTO" -> this.vehiculo = new Moto(identificacion, descripcion);
-        case "BICICLETA" -> this.vehiculo = new Bicicleta(identificacion, descripcion);
+        case "CARRO" -> this.vehiculo = new Carro();
+        case "MOTO" -> this.vehiculo = new Moto();
+        case "BICICLETA" -> this.vehiculo = new Bicicleta();
     }
 }
 
