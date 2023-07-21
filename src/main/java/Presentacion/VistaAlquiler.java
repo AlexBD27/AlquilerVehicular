@@ -43,34 +43,45 @@ public class VistaAlquiler extends javax.swing.JFrame {
         Pnl_vehiculos = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Datos del Vehiculo");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 200, -1));
 
         Lbl_vehiculo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         Lbl_vehiculo.setText("Seleccionar Vehiculo:");
+        jPanel1.add(Lbl_vehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 170, -1));
 
         CmbBx_tipoVehiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Carro", "Moto", "Bicicleta", " " }));
+        jPanel1.add(CmbBx_tipoVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 120, 30));
 
         txtFld_horasFacturadas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtFld_horasFacturadas.setPreferredSize(new java.awt.Dimension(71, 30));
+        jPanel1.add(txtFld_horasFacturadas, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, 310, -1));
 
         lbl_horasFacturadas.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_horasFacturadas.setText("Horas facturadas:");
+        jPanel1.add(lbl_horasFacturadas, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, -1, -1));
 
         txtFld_hora.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtFld_hora.setPreferredSize(new java.awt.Dimension(71, 30));
+        jPanel1.add(txtFld_hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 310, -1));
 
         lbl_horaRecogida.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_horaRecogida.setText("Hora recogida:");
+        jPanel1.add(lbl_horaRecogida, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
 
         txtFld_idVehiculo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtFld_idVehiculo.setPreferredSize(new java.awt.Dimension(71, 30));
+        jPanel1.add(txtFld_idVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 310, -1));
 
         lbl_idVehiculo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_idVehiculo.setText("ID:");
+        jPanel1.add(lbl_idVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, -1, -1));
 
         bttn_alquilar.setBackground(new java.awt.Color(51, 153, 255));
         bttn_alquilar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -82,91 +93,20 @@ public class VistaAlquiler extends javax.swing.JFrame {
                 bttn_alquilarActionPerformed(evt);
             }
         });
+        jPanel1.add(bttn_alquilar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, 310, 40));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(160, 160, 160)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addComponent(Lbl_vehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(CmbBx_tipoVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addComponent(lbl_idVehiculo))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addComponent(txtFld_idVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addComponent(lbl_horaRecogida))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addComponent(txtFld_hora, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addComponent(lbl_horasFacturadas))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addComponent(txtFld_horasFacturadas, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addComponent(bttn_alquilar, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jLabel1)
-                .addGap(65, 65, 65)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Lbl_vehiculo)
-                    .addComponent(CmbBx_tipoVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addComponent(lbl_idVehiculo)
-                .addGap(10, 10, 10)
-                .addComponent(txtFld_idVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(lbl_horaRecogida)
-                .addGap(10, 10, 10)
-                .addComponent(txtFld_hora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(lbl_horasFacturadas)
-                .addGap(10, 10, 10)
-                .addComponent(txtFld_horasFacturadas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(bttn_alquilar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 450, 490));
 
         pnl_header.setBackground(new java.awt.Color(255, 255, 255));
         pnl_header.setPreferredSize(new java.awt.Dimension(1220, 70));
+        pnl_header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        pnl_header.add(lbl_unsLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 13, 110, 45));
 
         lbl_unidadMedica.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lbl_unidadMedica.setText("Alquiler de Vehiculos");
+        pnl_header.add(lbl_unidadMedica, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, -1, -1));
 
-        javax.swing.GroupLayout pnl_headerLayout = new javax.swing.GroupLayout(pnl_header);
-        pnl_header.setLayout(pnl_headerLayout);
-        pnl_headerLayout.setHorizontalGroup(
-            pnl_headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl_headerLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(lbl_unsLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(340, 340, 340)
-                .addComponent(lbl_unidadMedica))
-        );
-        pnl_headerLayout.setVerticalGroup(
-            pnl_headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl_headerLayout.createSequentialGroup()
-                .addGap(13, 13, 13)
-                .addComponent(lbl_unsLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(pnl_headerLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(lbl_unidadMedica))
-        );
+        getContentPane().add(pnl_header, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
         javax.swing.GroupLayout Pnl_vehiculosLayout = new javax.swing.GroupLayout(Pnl_vehiculos);
         Pnl_vehiculos.setLayout(Pnl_vehiculosLayout);
@@ -179,29 +119,7 @@ public class VistaAlquiler extends javax.swing.JFrame {
             .addGap(0, 570, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnl_header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(70, 70, 70)
-                        .addComponent(Pnl_vehiculos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(pnl_header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Pnl_vehiculos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
+        getContentPane().add(Pnl_vehiculos, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 120, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
