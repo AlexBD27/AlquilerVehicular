@@ -28,44 +28,34 @@ public class VistaRegistro extends javax.swing.JFrame {
         lbl_foto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnl_header.setBackground(new java.awt.Color(255, 255, 255));
         pnl_header.setPreferredSize(new java.awt.Dimension(1220, 70));
+        pnl_header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        pnl_header.add(lbl_unsLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 13, 110, 45));
 
         lbl_unidadMedica.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lbl_unidadMedica.setText("Formulario de Datos del Cliente");
+        pnl_header.add(lbl_unidadMedica, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, -1, -1));
 
-        javax.swing.GroupLayout pnl_headerLayout = new javax.swing.GroupLayout(pnl_header);
-        pnl_header.setLayout(pnl_headerLayout);
-        pnl_headerLayout.setHorizontalGroup(
-            pnl_headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl_headerLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(lbl_unsLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(310, 310, 310)
-                .addComponent(lbl_unidadMedica))
-        );
-        pnl_headerLayout.setVerticalGroup(
-            pnl_headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl_headerLayout.createSequentialGroup()
-                .addGap(13, 13, 13)
-                .addComponent(lbl_unsLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(pnl_headerLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(lbl_unidadMedica))
-        );
+        getContentPane().add(pnl_header, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
         pnl_login.setBackground(new java.awt.Color(255, 255, 255));
         pnl_login.setPreferredSize(new java.awt.Dimension(450, 540));
+        pnl_login.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lbl_nombre.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_nombre.setText("Nombre:");
+        pnl_login.add(lbl_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, -1, -1));
 
         txtFld_fechanac.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtFld_fechanac.setPreferredSize(new java.awt.Dimension(71, 30));
+        pnl_login.add(txtFld_fechanac, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, 310, -1));
 
         lbl_id.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_id.setText("ID:");
+        pnl_login.add(lbl_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, -1, -1));
 
         bttn_ingresar.setBackground(new java.awt.Color(51, 153, 255));
         bttn_ingresar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -77,75 +67,22 @@ public class VistaRegistro extends javax.swing.JFrame {
                 bttn_ingresarActionPerformed(evt);
             }
         });
+        pnl_login.add(bttn_ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, 310, 40));
 
         lbl_fechaNac.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_fechaNac.setText("Fecha de nacimiento:");
+        pnl_login.add(lbl_fechaNac, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 360, -1, -1));
 
         txtFld_nombre.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtFld_nombre.setPreferredSize(new java.awt.Dimension(71, 30));
+        pnl_login.add(txtFld_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, 310, -1));
 
         txtFld_id.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtFld_id.setPreferredSize(new java.awt.Dimension(71, 30));
+        pnl_login.add(txtFld_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, 310, -1));
 
-        javax.swing.GroupLayout pnl_loginLayout = new javax.swing.GroupLayout(pnl_login);
-        pnl_login.setLayout(pnl_loginLayout);
-        pnl_loginLayout.setHorizontalGroup(
-            pnl_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl_loginLayout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addGroup(pnl_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbl_nombre)
-                    .addComponent(txtFld_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_id)
-                    .addComponent(txtFld_id, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_fechaNac)
-                    .addComponent(txtFld_fechanac, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bttn_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
-        pnl_loginLayout.setVerticalGroup(
-            pnl_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl_loginLayout.createSequentialGroup()
-                .addGap(220, 220, 220)
-                .addComponent(lbl_nombre)
-                .addGap(10, 10, 10)
-                .addComponent(txtFld_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(lbl_id)
-                .addGap(10, 10, 10)
-                .addComponent(txtFld_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(lbl_fechaNac)
-                .addGap(10, 10, 10)
-                .addComponent(txtFld_fechanac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(bttn_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(pnl_header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(lbl_foto, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(pnl_login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(pnl_header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(lbl_foto, javax.swing.GroupLayout.PREFERRED_SIZE, 540, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(pnl_login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
+        getContentPane().add(pnl_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 110, -1, -1));
+        getContentPane().add(lbl_foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 700, 540));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
