@@ -1,18 +1,36 @@
 package Dominio;
 
-import java.time.LocalDate;
+import java.sql.Date;
 
 public class Cliente {
+    private int id;
     private String nombre;
     private String dni;
-    private LocalDate fechaNacimiento;
+    private Date fechaNacimiento;
 
     public Cliente() {}
-    
-    public Cliente(String nombre, String dni, LocalDate fechaNacimiento) {
+
+    public Cliente(int id, String nombre, String dni, Date fechaNacimiento) {
+        this.id = id;
         this.nombre = nombre;
         this.dni = dni;
         this.fechaNacimiento = fechaNacimiento;
+    }
+    
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
     }
 
 
@@ -24,19 +42,11 @@ public class Cliente {
         this.nombre = nombre;
     }
 
-    public String getdni() {
-        return dni;
-    }
-
-    public void setdni(String dni) {
-        this.dni = dni;
-    }
-
-    public LocalDate getFechaNacimiento() {
+    public Date getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(LocalDate fechaNacimiento) {
+    public void setFechaNacimiento(Date fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 }

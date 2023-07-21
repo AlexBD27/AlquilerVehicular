@@ -3,6 +3,7 @@ package Dominio;
 import java.time.LocalTime;
 
 public class Alquiler {
+    private int id;
     private Vehiculo vehiculoAlquilado;
     private Cliente cliente;
     private LocalTime horaRecogida;
@@ -10,13 +11,21 @@ public class Alquiler {
     
     public Alquiler() {}
 
-    public Alquiler(Vehiculo vehiculoAlquilado, Cliente cliente, LocalTime horaRecogida, int numeroHorasFacturadas) {
+    public Alquiler(int id, Vehiculo vehiculoAlquilado, Cliente cliente, LocalTime horaRecogida, int numeroHorasFacturadas) {
+        this.id = id;
         this.vehiculoAlquilado = vehiculoAlquilado;
         this.cliente = cliente;
         this.horaRecogida = horaRecogida;
         this.numeroHorasFacturadas = numeroHorasFacturadas;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public Vehiculo getVehiculoAlquilado() {
         return vehiculoAlquilado;
