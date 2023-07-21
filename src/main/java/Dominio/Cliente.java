@@ -1,13 +1,15 @@
 package Dominio;
 
+import java.time.LocalDate;
+
 public class Cliente {
-	private String nombre;
+    private String nombre;
     private String dni;
-    private String fechaNacimiento;
+    private LocalDate fechaNacimiento;
 
     public Cliente() {}
     
-    public Cliente(String nombre, String dni, String fechaNacimiento) {
+    public Cliente(String nombre, String dni, LocalDate fechaNacimiento) {
         this.nombre = nombre;
         this.dni = dni;
         this.fechaNacimiento = fechaNacimiento;
@@ -30,11 +32,11 @@ public class Cliente {
         this.dni = dni;
     }
 
-    public String getFechaNacimiento() {
+    public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(String fechaNacimiento) {
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 }

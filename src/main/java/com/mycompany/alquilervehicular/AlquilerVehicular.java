@@ -2,6 +2,7 @@
 
 package com.mycompany.alquilervehicular;
 
+
 /**
  *
  * @author USER
@@ -9,6 +10,6 @@ package com.mycompany.alquilervehicular;
 public class AlquilerVehicular {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        System.out.println("Hello World!");        
     }
 }
