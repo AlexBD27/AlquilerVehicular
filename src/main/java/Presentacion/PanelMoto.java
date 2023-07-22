@@ -42,8 +42,7 @@ private DefaultTableModel model;
 
         jScrollPane1 = new javax.swing.JScrollPane();
         Tbl_moto = new javax.swing.JTable();
-        TxtFld_buscarCarro = new javax.swing.JTextField();
-        Bttn_buscar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setMinimumSize(new java.awt.Dimension(690, 570));
         setPreferredSize(new java.awt.Dimension(690, 570));
@@ -64,17 +63,16 @@ private DefaultTableModel model;
         jScrollPane1.setViewportView(Tbl_moto);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 580, -1));
-        add(TxtFld_buscarCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 320, 30));
 
-        Bttn_buscar.setText("Buscar");
-        add(Bttn_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, 140, 30));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setText("LISTADO DE MOTOS");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 40, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Bttn_buscar;
     private javax.swing.JTable Tbl_moto;
-    private javax.swing.JTextField TxtFld_buscarCarro;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 public void mostrarMotos(List<Moto> listaMotos) {

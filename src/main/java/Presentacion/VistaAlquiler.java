@@ -5,8 +5,7 @@
 package Presentacion;
 
 import AccesoDatos.VehiculoDAO;
-import Dominio.Carro;
-import Dominio.Moto;
+import Dominio.*;
 import Dominio.Vehiculo;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,7 +20,7 @@ import javax.swing.DefaultComboBoxModel;
 public class VistaAlquiler extends javax.swing.JFrame implements ActionListener {
 
     private PresentadorGeneral pGeneral;
-    private Bicicleta pBicicleta;
+    private PanelBicicleta pBicicleta;
     private PanelCarro pCarro;
     private PanelMoto pMoto;
 
@@ -31,7 +30,7 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener 
         initComponents();
         this.pGeneral = p;
         this.pCarro = new PanelCarro();
-        this.pBicicleta = new Bicicleta();
+        this.pBicicleta = new PanelBicicleta();
         this.pMoto = new PanelMoto();
         this.CmbBx_tipoVehiculo.addActionListener(this);
         llenarComboBoxTipoVehiculo();
@@ -153,7 +152,7 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener 
             .addGap(0, 570, Short.MAX_VALUE)
         );
 
-        getContentPane().add(Pnl_vehiculosBase, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 130, 690, -1));
+        getContentPane().add(Pnl_vehiculosBase, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 100, 690, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -199,6 +198,7 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener 
                     case 3 -> {
                         pGeneral.getpVehiculo().cambiarTipoVehiculo(Pnl_vehiculosBase, pBicicleta);
                         pGeneral.getpVehiculo().setTipoVehiculo("BICICLETA");
+                        mostrarPanelBicicleta();
                     }
                 }
             }
@@ -233,4 +233,17 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener 
         pMoto.mostrarMotos(listaMotos);
     }
 
+    public void mostrarPanelBicicleta() {
+        VehiculoDAO vehiculoDAO = new VehiculoDAO();
+        List<Vehiculo> listaVehiculos = vehiculoDAO.listado();
+
+        List<Bicicleta> listaBicicletas = new ArrayList<>();
+        for (Vehiculo vehiculo : listaVehiculos) {
+            if (vehiculo instanceof Bicicleta) {
+                listaBicicletas.add((Bicicleta) vehiculo);
+            }
+        }
+
+        pBicicleta.mostrarBicicletas(listaBicicletas);
+    }
 }

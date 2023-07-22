@@ -4,7 +4,7 @@
  */
 package Presentacion;
 
-import Dominio.Carro;
+import Dominio.*;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
@@ -12,13 +12,13 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author ANGIE
  */
-public class PanelCarro extends javax.swing.JPanel {
+public class PanelBicicleta extends javax.swing.JPanel {
 
     private DefaultTableModel model;
 
-    public PanelCarro() {
+    public PanelBicicleta() {
         initComponents();
-        model = (DefaultTableModel) Tbl_carro.getModel();
+        model = (DefaultTableModel) Tbl_bicicleta.getModel();
         inicializarTabla();
     }
 
@@ -27,8 +27,7 @@ public class PanelCarro extends javax.swing.JPanel {
         model.addColumn("Identificador");
         model.addColumn("Descripción");
         model.addColumn("Precio por Hora");
-        model.addColumn("Categoría");
-        Tbl_carro.setModel(model);
+        Tbl_bicicleta.setModel(model);
     }
 
     /**
@@ -41,46 +40,46 @@ public class PanelCarro extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        Tbl_carro = new javax.swing.JTable();
+        Tbl_bicicleta = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
 
-        setMinimumSize(new java.awt.Dimension(700, 200));
-        setPreferredSize(new java.awt.Dimension(690, 570));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Tbl_carro.setModel(new javax.swing.table.DefaultTableModel(
+        Tbl_bicicleta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Title 1", "Title 2", "Title 3"
             }
         ));
-        jScrollPane1.setViewportView(Tbl_carro);
+        Tbl_bicicleta.setMinimumSize(new java.awt.Dimension(650, 570));
+        jScrollPane1.setViewportView(Tbl_bicicleta);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 580, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setText("LISTADOS DE CARROS");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 40, -1, -1));
+        jLabel1.setText("LISTADO DE BICICLETAS");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable Tbl_carro;
+    private javax.swing.JTable Tbl_bicicleta;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
-public void mostrarVehiculos(List<Carro> listaCarros) {
-        DefaultTableModel model = (DefaultTableModel) Tbl_carro.getModel();
-        model.setRowCount(0);
+public void mostrarBicicletas(List<Bicicleta> listaBicicletas) {
+    DefaultTableModel model = (DefaultTableModel) Tbl_bicicleta.getModel();
+    model.setRowCount(0);
 
-        for (Carro carro : listaCarros) {
-            model.addRow(new Object[]{carro.getIdentificador(), carro.getDescripcion(), carro.getPrecioHora(),carro.getCategoria()});
-        }
+    for (Bicicleta bicicleta : listaBicicletas) {
+        model.addRow(new Object[]{bicicleta.getIdentificador(), bicicleta.getDescripcion(), bicicleta.getPrecioHora(), /*otros atributos específicos de PanelBicicleta*/});
     }
+}
+
 
 }
