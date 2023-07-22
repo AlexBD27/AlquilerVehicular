@@ -10,7 +10,7 @@ public class Cliente {
     private String nombre;
     private String dni;
     private Date fechaNacimiento;
-    private boolean dniValido = false;
+    private boolean dniValido;
     
     public Cliente() {}
 

@@ -12,7 +12,7 @@ import Dominio.Cliente;
  */
 public class PresentadorLogin {
     
-    private Cliente cliente;
+    private Cliente cliente = new Cliente();
     
     public void setModeloCliente(Cliente cliente){
         this.cliente = cliente;
