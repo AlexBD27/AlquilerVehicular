@@ -9,15 +9,18 @@ import Dominio.*;
 import Dominio.Vehiculo;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 
 /**
  *
  * @author ANGIE
  */
-public class VistaAlquiler extends javax.swing.JFrame implements ActionListener {
+public class VistaAlquiler extends javax.swing.JFrame implements ActionListener, ListSelectionListener {
 
     private PresentadorGeneral pGeneral;
     private PanelBicicleta pBicicleta;
@@ -34,6 +37,10 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener 
         this.pMoto = new PanelMoto();
         this.CmbBx_tipoVehiculo.addActionListener(this);
         llenarComboBoxTipoVehiculo();
+
+        pCarro.getTbl_carro().getSelectionModel().addListSelectionListener(this);
+        pMoto.getTbl_moto().getSelectionModel().addListSelectionListener(this);
+        pBicicleta.getTbl_bicicleta().getSelectionModel().addListSelectionListener(this);
     }
 
     public void iniciar() {
@@ -48,6 +55,12 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener 
         CmbBx_tipoVehiculo.addItem("Carro");
         CmbBx_tipoVehiculo.addItem("Moto");
         CmbBx_tipoVehiculo.addItem("Bicicleta");
+    }
+
+    public void setDatosAlquiler() {
+        pGeneral.getpAlquiler().setHoraRecogida(LocalTime.parse(txtFld_hora.getText()));
+        pGeneral.getpAlquiler().setHorasFacturadas(Integer.parseInt(txtFld_horasFacturadas.getText()));
+
     }
 
     /**
@@ -149,10 +162,10 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener 
         );
         Pnl_vehiculosBaseLayout.setVerticalGroup(
             Pnl_vehiculosBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 570, Short.MAX_VALUE)
+            .addGap(0, 530, Short.MAX_VALUE)
         );
 
-        getContentPane().add(Pnl_vehiculosBase, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 100, 690, -1));
+        getContentPane().add(Pnl_vehiculosBase, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 140, 690, 530));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -201,6 +214,28 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener 
                         mostrarPanelBicicleta();
                     }
                 }
+            }
+            case "ALQUILAR" -> {
+
+            }
+        }
+    }
+
+    @Override
+    public void valueChanged(ListSelectionEvent e) {
+        if (!e.getValueIsAdjusting()) {
+            if (e.getSource() == pCarro.getTbl_carro().getSelectionModel()) {
+                int selectedRow = pCarro.getTbl_carro().getSelectedRow();
+                if (selectedRow != -1) {
+                    int idVehiculo = (int) pCarro.getTbl_carro().getValueAt(selectedRow, 0);
+                    pGeneral.getpAlquiler().setId(idVehiculo);
+                }
+            } else if (e.getSource() == pMoto.getTbl_moto().getSelectionModel()) {
+                // Lógica similar para el panel de motos si tienes uno
+                // ...
+            } else if (e.getSource() == pBicicleta.getTbl_bicicleta().getSelectionModel()) {
+                // Lógica similar para el panel de bicicletas si tienes uno
+                // ...
             }
         }
     }

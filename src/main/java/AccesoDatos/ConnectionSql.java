@@ -13,7 +13,7 @@ public class ConnectionSql {
     private static String numeroPuerto = "1433";
     private static String nombreBaseDato = "AlquilerVehiculo";
     private static String nombreUsuario = "sa";
-    private static String clave = "halamadrid";
+    private static String clave = "castillo";
     private static String conexion;
     private static Connection connect;
     

@@ -6,6 +6,7 @@ package Presentacion;
 
 import Dominio.*;
 import java.util.List;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -28,6 +29,9 @@ public class PanelBicicleta extends javax.swing.JPanel {
         model.addColumn("Descripción");
         model.addColumn("Precio por Hora");
         Tbl_bicicleta.setModel(model);
+    }
+        public JTable getTbl_bicicleta() {
+        return Tbl_bicicleta;
     }
 
     /**
@@ -56,7 +60,8 @@ public class PanelBicicleta extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3"
             }
         ));
-        Tbl_bicicleta.setMinimumSize(new java.awt.Dimension(650, 570));
+        Tbl_bicicleta.setMinimumSize(new java.awt.Dimension(650, 560));
+        Tbl_bicicleta.setPreferredSize(new java.awt.Dimension(225, 60));
         jScrollPane1.setViewportView(Tbl_bicicleta);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 580, -1));

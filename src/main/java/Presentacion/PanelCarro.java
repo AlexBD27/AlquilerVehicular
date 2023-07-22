@@ -6,6 +6,7 @@ package Presentacion;
 
 import Dominio.Carro;
 import java.util.List;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -16,8 +17,10 @@ public class PanelCarro extends javax.swing.JPanel {
 
     private DefaultTableModel model;
 
+
     public PanelCarro() {
         initComponents();
+        Tbl_carro = new javax.swing.JTable();
         model = (DefaultTableModel) Tbl_carro.getModel();
         inicializarTabla();
     }
@@ -31,6 +34,10 @@ public class PanelCarro extends javax.swing.JPanel {
         Tbl_carro.setModel(model);
     }
 
+    public JTable getTbl_carro() {
+        return Tbl_carro;
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -42,7 +49,8 @@ public class PanelCarro extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         Tbl_carro = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
 
         setMinimumSize(new java.awt.Dimension(700, 200));
         setPreferredSize(new java.awt.Dimension(690, 570));
@@ -61,17 +69,24 @@ public class PanelCarro extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(Tbl_carro);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 580, -1));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 580, -1));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setText("LISTADOS DE CARROS");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 40, -1, -1));
+        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("LISTADO DE CARROS");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, -1, -1));
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 580, 50));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Tbl_carro;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 public void mostrarVehiculos(List<Carro> listaCarros) {
@@ -79,7 +94,7 @@ public void mostrarVehiculos(List<Carro> listaCarros) {
         model.setRowCount(0);
 
         for (Carro carro : listaCarros) {
-            model.addRow(new Object[]{carro.getIdentificador(), carro.getDescripcion(), carro.getPrecioHora(),carro.getCategoria()});
+            model.addRow(new Object[]{carro.getIdentificador(), carro.getDescripcion(), carro.getPrecioHora(), carro.getCategoria()});
         }
     }
 
