@@ -48,7 +48,7 @@ public class VistaRegistro extends javax.swing.JFrame {
         txtFld_fechanac.setPreferredSize(new java.awt.Dimension(71, 30));
 
         lbl_id.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lbl_id.setText("ID:");
+        lbl_id.setText("DNI:");
 
         bttn_ingresar.setBackground(new java.awt.Color(51, 153, 255));
         bttn_ingresar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N

@@ -1,5 +1,6 @@
 package Dominio;
 
+import AccesoDatos.AlquilerDAO;
 import java.time.LocalTime;
 
 public class Alquiler {
@@ -57,5 +58,10 @@ public class Alquiler {
 
     public void setNumeroHorasFacturadas(int numeroHorasFacturadas) {
         this.numeroHorasFacturadas = numeroHorasFacturadas;
+    }
+    
+    public void alquilar(){
+        AlquilerDAO alquilerDao = new AlquilerDAO();
+        alquilerDao.create(this);
     }
 }
