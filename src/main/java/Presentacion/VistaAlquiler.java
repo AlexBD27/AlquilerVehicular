@@ -15,7 +15,7 @@ import javax.swing.DefaultComboBoxModel;
 public class VistaAlquiler extends javax.swing.JFrame implements ActionListener {
 
     private PresentadorGeneral pGeneral;
-    private PanelBicicleta pBicicleta;
+    private Bicicleta pBicicleta;
     private PanelCarro pCarro;
     private PanelMoto pMoto;
 
@@ -25,7 +25,7 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener 
         initComponents();
         this.pGeneral = p;
         this.pCarro = new PanelCarro();
-        this.pBicicleta = new PanelBicicleta();
+        this.pBicicleta = new Bicicleta();
         this.pMoto = new PanelMoto();
         this.CmbBx_tipoVehiculo.addActionListener(this);
         llenarComboBoxTipoVehiculo();
