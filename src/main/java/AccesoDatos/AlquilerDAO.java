@@ -2,11 +2,14 @@
 package AccesoDatos;
 
 import Dominio.Alquiler;
+import Dominio.Cliente;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 public class AlquilerDAO extends DAO<Alquiler>{
@@ -93,4 +96,29 @@ public class AlquilerDAO extends DAO<Alquiler>{
           }
             
     }
+
+    @Override
+    public List<Alquiler> listado() {
+        List<Alquiler> listaAlquiler = new ArrayList<>();
+        try {
+            sql = "select * from Alquiler";
+            ps = this.connect.prepareStatement(sql);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                Alquiler alquiler = new Alquiler();
+                alquiler.setId(rs.getInt(1));
+                alquiler.getVehiculoAlquilado().setIdentificador(rs.getInt(2));
+                alquiler.getCliente().setId(rs.getInt(3));
+                java.sql.Time sqlTime = rs.getTime(4);
+                LocalTime horaRecogida = sqlTime.toLocalTime();
+                alquiler.setHoraRecogida(horaRecogida);
+                alquiler.setNumeroHorasFacturadas(rs.getInt(5));
+            }
+   
+        }catch (Exception e){
+          e.printStackTrace();} 
+        return listaAlquiler;
+    }
+
 }
