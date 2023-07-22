@@ -1,6 +1,9 @@
 
 package AccesoDatos;
 
+import Dominio.Bicicleta;
+import Dominio.Carro;
+import Dominio.Moto;
 import Dominio.Vehiculo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -76,12 +79,20 @@ public class VehiculoDAO extends DAO<Vehiculo>{
     public List<Vehiculo> listado() {
         List<Vehiculo> listaVehiculo = new ArrayList<>();
         try {
-            sql = "select * from Cliente";
+            sql = "select * from Vehiculo";
             ps = this.connect.prepareStatement(sql);
             rs = ps.executeQuery();
             
             while(rs.next()){
-//                Vehiculo v = new Vehiculo();
+                Vehiculo v;
+                if(rs.getString(5)!=null){
+                    v = new Carro();
+                    
+                }else if("Moto".equals(rs.getString(4))){
+                    v = new Moto();
+                }else{
+                    v = new Bicicleta();
+                }
 //                c.setId(rs.getInt(1));
 //                c.setDni(rs.getString(2));
 //                c.setNombre(rs.getString(3));
