@@ -19,9 +19,7 @@ public class VistaLogin extends javax.swing.JFrame {
         lbl_unidadMedica = new javax.swing.JLabel();
         pnl_login = new javax.swing.JPanel();
         lbl_nombre = new javax.swing.JLabel();
-        lbl_id = new javax.swing.JLabel();
         bttn_login = new javax.swing.JButton();
-        txtFld_nombre = new javax.swing.JTextField();
         txtFld_DNI = new javax.swing.JTextField();
         lbl_foto = new javax.swing.JLabel();
 
@@ -40,10 +38,7 @@ public class VistaLogin extends javax.swing.JFrame {
         pnl_login.setPreferredSize(new java.awt.Dimension(450, 540));
 
         lbl_nombre.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lbl_nombre.setText("Usuario:");
-
-        lbl_id.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lbl_id.setText("Clave:");
+        lbl_nombre.setText("DNI:");
 
         bttn_login.setBackground(new java.awt.Color(51, 153, 255));
         bttn_login.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -56,9 +51,6 @@ public class VistaLogin extends javax.swing.JFrame {
             }
         });
 
-        txtFld_nombre.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtFld_nombre.setPreferredSize(new java.awt.Dimension(71, 30));
-
         txtFld_DNI.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtFld_DNI.setPreferredSize(new java.awt.Dimension(71, 30));
 
@@ -70,23 +62,17 @@ public class VistaLogin extends javax.swing.JFrame {
                 .addGap(70, 70, 70)
                 .addGroup(pnl_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbl_nombre)
-                    .addComponent(txtFld_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_id)
                     .addComponent(txtFld_DNI, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bttn_login, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         pnl_loginLayout.setVerticalGroup(
             pnl_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnl_loginLayout.createSequentialGroup()
-                .addGap(220, 220, 220)
+                .addGap(300, 300, 300)
                 .addComponent(lbl_nombre)
-                .addGap(10, 10, 10)
-                .addComponent(txtFld_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
-                .addComponent(lbl_id)
                 .addGap(18, 18, 18)
                 .addComponent(txtFld_DNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
+                .addGap(72, 72, 72)
                 .addComponent(bttn_login, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -127,13 +113,11 @@ public class VistaLogin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bttn_login;
     private javax.swing.JLabel lbl_foto;
-    private javax.swing.JLabel lbl_id;
     private javax.swing.JLabel lbl_nombre;
     private javax.swing.JLabel lbl_unidadMedica;
     private javax.swing.JLabel lbl_unsLogo;
     private javax.swing.JPanel pnl_header;
     private javax.swing.JPanel pnl_login;
     private javax.swing.JTextField txtFld_DNI;
-    private javax.swing.JTextField txtFld_nombre;
     // End of variables declaration//GEN-END:variables
 }
