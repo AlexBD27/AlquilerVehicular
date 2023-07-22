@@ -4,6 +4,8 @@
  */
 package Presentacion;
 
+import Dominio.Carro;
+import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -17,6 +19,16 @@ public class PanelCarro extends javax.swing.JPanel {
     public PanelCarro() {
         initComponents();
         model = (DefaultTableModel) Tbl_carro.getModel();
+        inicializarTabla();
+    }
+
+    private void inicializarTabla() {
+        model = new DefaultTableModel();
+        model.addColumn("Identificador");
+        model.addColumn("Descripción");
+        model.addColumn("Precio por Hora");
+        model.addColumn("Categoría");
+        Tbl_carro.setModel(model);
     }
 
     /**
@@ -64,5 +76,13 @@ public class PanelCarro extends javax.swing.JPanel {
     private javax.swing.JTextField TxtFld_buscarCarro;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
+public void mostrarVehiculos(List<Carro> listaCarros) {
+        DefaultTableModel model = (DefaultTableModel) Tbl_carro.getModel();
+        model.setRowCount(0);
+
+        for (Carro carro : listaCarros) {
+            model.addRow(new Object[]{carro.getIdentificador(), carro.getDescripcion(), carro.getPrecioHora(),carro.getCategoria()});
+        }
+    }
 
 }

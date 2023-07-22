@@ -4,8 +4,14 @@
  */
 package Presentacion;
 
+import AccesoDatos.VehiculoDAO;
+import Dominio.Carro;
+import Dominio.Moto;
+import Dominio.Vehiculo;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 
 /**
@@ -30,7 +36,7 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener 
         this.CmbBx_tipoVehiculo.addActionListener(this);
         llenarComboBoxTipoVehiculo();
     }
-    
+
     public void iniciar() {
         pack();
         setLocationRelativeTo(null);
@@ -183,10 +189,12 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener 
                     case 1 -> {
                         pGeneral.getpVehiculo().cambiarTipoVehiculo(Pnl_vehiculosBase, pCarro);
                         pGeneral.getpVehiculo().setTipoVehiculo("CARRO");
+                        mostrarPanelCarro();
                     }
                     case 2 -> {
                         pGeneral.getpVehiculo().cambiarTipoVehiculo(Pnl_vehiculosBase, pMoto);
                         pGeneral.getpVehiculo().setTipoVehiculo("MOTO");
+                        mostrarPanelMoto();
                     }
                     case 3 -> {
                         pGeneral.getpVehiculo().cambiarTipoVehiculo(Pnl_vehiculosBase, pBicicleta);
@@ -196,4 +204,33 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener 
             }
         }
     }
+
+    public void mostrarPanelCarro() {
+        VehiculoDAO vehiculoDAO = new VehiculoDAO();
+        List<Vehiculo> listaVehiculos = vehiculoDAO.listado();
+
+        List<Carro> listaCarros = new ArrayList<>();
+        for (Vehiculo vehiculo : listaVehiculos) {
+            if (vehiculo instanceof Carro) {
+                listaCarros.add((Carro) vehiculo);
+            }
+        }
+
+        pCarro.mostrarVehiculos(listaCarros);
+    }
+
+    public void mostrarPanelMoto() {
+        VehiculoDAO vehiculoDAO = new VehiculoDAO();
+        List<Vehiculo> listaVehiculos = vehiculoDAO.listado();
+
+        List<Moto> listaMotos = new ArrayList<>();
+        for (Vehiculo vehiculo : listaVehiculos) {
+            if (vehiculo instanceof Moto) {
+                listaMotos.add((Moto) vehiculo);
+            }
+        }
+
+        pMoto.mostrarMotos(listaMotos);
+    }
+
 }
