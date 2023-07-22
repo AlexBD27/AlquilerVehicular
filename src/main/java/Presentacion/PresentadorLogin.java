@@ -22,7 +22,19 @@ public class PresentadorLogin {
         cliente.setDni(dni);
     }
     
-    public void iniciarSesion(String dnibuscado){
-        cliente.iniciarSesion(dnibuscado);
+    public void iniciarSesion(){
+        cliente.iniciarSesion();
+    }
+    
+    public boolean Acceso(){
+        return cliente.DniValido();
+    }
+    
+    public String mensaje(){
+        if (!cliente.DniValido()){
+            return "DNI invalido";
+        } else {
+            return "Inicio de Sesion exitoso";
+        }
     }
 }

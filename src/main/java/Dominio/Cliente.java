@@ -1,6 +1,7 @@
 package Dominio;
 
 import AccesoDatos.ClienteDAO;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -9,7 +10,8 @@ public class Cliente {
     private String nombre;
     private String dni;
     private Date fechaNacimiento;
-
+    private boolean dniValido = false;
+    
     public Cliente() {}
 
     public Cliente(int id, String nombre, String dni, Date fechaNacimiento) {
@@ -35,7 +37,6 @@ public class Cliente {
         this.dni = dni;
     }
 
-
     public String getNombre() {
         return nombre;
     }
@@ -52,13 +53,20 @@ public class Cliente {
         this.fechaNacimiento = fechaNacimiento;
     }
     
-    public void iniciarSesion(String dnibuscado){
+    public boolean DniValido(){
+        return dniValido;
+    }
+    
+    public void iniciarSesion(){
         ClienteDAO clienteDao = new ClienteDAO();
-        List<Cliente> listaClientes = clienteDao.listado();
+        List<Cliente> listaClientes = new ArrayList<>();
         
-        for (Cliente cliente : listaClientes){
-            if (cliente.getDni().equals(dnibuscado)){
-                System.out.println("Cuenta encontrada: ");
+        for (Cliente c : listaClientes){
+            if (c.getDni().equals(this.getDni())){
+                dniValido = true;
+            }
+            else {
+                dniValido = false;
             }
         }
     }

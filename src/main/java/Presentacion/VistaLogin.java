@@ -1,15 +1,44 @@
 package Presentacion;
 
-public class VistaLogin extends javax.swing.JFrame {
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
+public class VistaLogin extends javax.swing.JFrame implements ActionListener{
 
-    public VistaLogin() {
+    private PresentadorGeneral pGeneral;
+    
+    public VistaLogin(PresentadorGeneral pGeneral) {
+        this.pGeneral = pGeneral;
         initComponents();
-
+        this.bttn_login.addActionListener(this);
+        this.bttn_registro.addActionListener(this);
     }
 
+    public void iniciar(){
+        setLocationRelativeTo(null);
+        setResizable(false);
+        setVisible(true);
+    }
+    
+    public String getDni(){
+        return txtFld_DNI.getText();
+    }
 
-
+    public void mensaje(String salida){
+        JOptionPane.showMessageDialog(null, salida);
+    }
+    
+    public void actionIniciarSesion(){
+        pGeneral.getpLogin().setDNI(this.getDni());
+        pGeneral.getpLogin().iniciarSesion();
+        mensaje(pGeneral.getpLogin().mensaje());
+        if (pGeneral.getpLogin().Acceso()){
+            this.dispose();
+            //Mostrar vista alquiler
+        }
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -141,4 +170,9 @@ public class VistaLogin extends javax.swing.JFrame {
     private javax.swing.JPanel pnl_login;
     private javax.swing.JTextField txtFld_DNI;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        actionIniciarSesion();
+    }
 }
