@@ -8,12 +8,12 @@ package Presentacion;
  *
  * @author ANGIE
  */
-public class Bicicleta extends javax.swing.JPanel {
+public class PanelCarro extends javax.swing.JPanel {
 
     /**
      * Creates new form Carro
      */
-    public Bicicleta() {
+    public PanelCarro() {
         initComponents();
     }
 
@@ -31,20 +31,21 @@ public class Bicicleta extends javax.swing.JPanel {
         TxtFld_buscarCarro = new javax.swing.JTextField();
         Bttn_buscar = new javax.swing.JButton();
 
+        setMinimumSize(new java.awt.Dimension(700, 200));
+        setPreferredSize(new java.awt.Dimension(690, 570));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3"
+                "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jTable1.setMinimumSize(new java.awt.Dimension(650, 570));
         jScrollPane1.setViewportView(jTable1);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 580, -1));

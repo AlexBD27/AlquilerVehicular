@@ -4,17 +4,38 @@
  */
 package Presentacion;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.DefaultComboBoxModel;
+
 /**
  *
  * @author ANGIE
  */
-public class VistaAlquiler extends javax.swing.JFrame {
+public class VistaAlquiler extends javax.swing.JFrame implements ActionListener {
 
-    /**
-     * Creates new form VistaAlquiler
-     */
-    public VistaAlquiler() {
+    private PresentadorGeneral pGeneral;
+    private PanelBicicleta pBicicleta;
+    private PanelCarro pCarro;
+    private PanelMoto pMoto;
+
+    private DefaultComboBoxModel comboBoxTipoVehiculo = new DefaultComboBoxModel();
+
+    public VistaAlquiler(PresentadorGeneral p) {
         initComponents();
+        this.pGeneral = p;
+        this.pCarro = new PanelCarro();
+        this.pBicicleta = new PanelBicicleta();
+        this.pMoto = new PanelMoto();
+        this.CmbBx_tipoVehiculo.addActionListener(this);
+        llenarComboBoxTipoVehiculo();
+    }
+
+    private void llenarComboBoxTipoVehiculo() {
+        CmbBx_tipoVehiculo.addItem("Tipo de Vehiculo");
+        CmbBx_tipoVehiculo.addItem("Carro");
+        CmbBx_tipoVehiculo.addItem("Moto");
+        CmbBx_tipoVehiculo.addItem("Bicicleta");
     }
 
     /**
@@ -40,7 +61,7 @@ public class VistaAlquiler extends javax.swing.JFrame {
         pnl_header = new javax.swing.JPanel();
         lbl_unsLogo = new javax.swing.JLabel();
         lbl_unidadMedica = new javax.swing.JLabel();
-        Pnl_vehiculos = new javax.swing.JPanel();
+        Pnl_vehiculosBase = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -108,18 +129,18 @@ public class VistaAlquiler extends javax.swing.JFrame {
 
         getContentPane().add(pnl_header, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
-        javax.swing.GroupLayout Pnl_vehiculosLayout = new javax.swing.GroupLayout(Pnl_vehiculos);
-        Pnl_vehiculos.setLayout(Pnl_vehiculosLayout);
-        Pnl_vehiculosLayout.setHorizontalGroup(
-            Pnl_vehiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout Pnl_vehiculosBaseLayout = new javax.swing.GroupLayout(Pnl_vehiculosBase);
+        Pnl_vehiculosBase.setLayout(Pnl_vehiculosBaseLayout);
+        Pnl_vehiculosBaseLayout.setHorizontalGroup(
+            Pnl_vehiculosBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 690, Short.MAX_VALUE)
         );
-        Pnl_vehiculosLayout.setVerticalGroup(
-            Pnl_vehiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        Pnl_vehiculosBaseLayout.setVerticalGroup(
+            Pnl_vehiculosBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 570, Short.MAX_VALUE)
         );
 
-        getContentPane().add(Pnl_vehiculos, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 130, 690, -1));
+        getContentPane().add(Pnl_vehiculosBase, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 130, 690, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -129,11 +150,10 @@ public class VistaAlquiler extends javax.swing.JFrame {
     }//GEN-LAST:event_bttn_alquilarActionPerformed
 
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> CmbBx_tipoVehiculo;
     private javax.swing.JLabel Lbl_vehiculo;
-    private javax.swing.JPanel Pnl_vehiculos;
+    private javax.swing.JPanel Pnl_vehiculosBase;
     private javax.swing.JButton bttn_alquilar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
@@ -147,4 +167,26 @@ public class VistaAlquiler extends javax.swing.JFrame {
     private javax.swing.JTextField txtFld_horasFacturadas;
     private javax.swing.JTextField txtFld_idVehiculo;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        switch (e.getActionCommand()) {
+            case "Tipo de Vehiculo" -> {
+                switch (CmbBx_tipoVehiculo.getSelectedIndex()) {
+                    case 1 -> {
+                        pGeneral.getpVehiculo().cambiarTipoVehiculo(Pnl_vehiculosBase, pCarro);
+                        pGeneral.getpVehiculo().setTipoVehiculo("CARRO");
+                    }
+                    case 2 -> {
+                        pGeneral.getpVehiculo().cambiarTipoVehiculo(Pnl_vehiculosBase, pMoto);
+                        pGeneral.getpVehiculo().setTipoVehiculo("MOTO");
+                    }
+                    case 3 -> {
+                        pGeneral.getpVehiculo().cambiarTipoVehiculo(Pnl_vehiculosBase, pBicicleta);
+                        pGeneral.getpVehiculo().setTipoVehiculo("BICICLETA");
+                    }
+                }
+            }
+        }
+    }
 }

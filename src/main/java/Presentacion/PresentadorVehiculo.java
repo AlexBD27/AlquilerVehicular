@@ -42,6 +42,12 @@ public class PresentadorVehiculo {
         modeloVehiculo.setDatosCarro(descripcion, categoria);
     }
     
+    public void setDatosVehiculoMoto(String descripcion){
+        modeloVehiculo.setDatosMoto(descripcion);
+    }
     
+    public void setDatosVehiculoBicicleta(String descripcion){
+        modeloVehiculo.setDatosBicicleta(descripcion);
+    }
 
 }

@@ -8,12 +8,12 @@ package Presentacion;
  *
  * @author ANGIE
  */
-public class Moto extends javax.swing.JPanel {
+public class PanelMoto extends javax.swing.JPanel {
 
     /**
      * Creates new form Carro
      */
-    public Moto() {
+    public PanelMoto() {
         initComponents();
     }
 
@@ -31,6 +31,7 @@ public class Moto extends javax.swing.JPanel {
         TxtFld_buscarCarro = new javax.swing.JTextField();
         Bttn_buscar = new javax.swing.JButton();
 
+        setMinimumSize(new java.awt.Dimension(690, 570));
         setPreferredSize(new java.awt.Dimension(690, 570));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
