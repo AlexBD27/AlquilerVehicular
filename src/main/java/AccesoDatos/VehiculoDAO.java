@@ -3,13 +3,12 @@ package AccesoDatos;
 
 import Dominio.Bicicleta;
 import Dominio.Carro;
+import Dominio.Categoria;
 import Dominio.Moto;
 import Dominio.Vehiculo;
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -30,10 +29,11 @@ public class VehiculoDAO extends DAO<Vehiculo>{
             ps = this.connect.prepareStatement(sql);
             
             ps.setString(1 , obj.getDescripcion());
-//            ps.setDouble(2 , obj.);
-//            ps.setTime(3 , sqlTime);
-//            ps.setInt(4 , obj.getNumeroHorasFacturadas());
-            
+            ps.setDouble(2 , obj.getPrecioHora());
+            ps.setString(3 , obj.getTipo());
+            if(obj instanceof Carro){
+                ps.setString(4 , ((Carro) obj).getCategoria().name());
+            }
             ejecutarActualizacion();
 
         } 
@@ -87,19 +87,29 @@ public class VehiculoDAO extends DAO<Vehiculo>{
                 Vehiculo v;
                 if(rs.getString(5)!=null){
                     v = new Carro();
-                    
+                    Carro c = (Carro) v;
+                    c.setIdentificador(rs.getInt(1));
+                    c.setDescripcion(rs.getString(2));
+                    c.setPrecioHora(rs.getDouble(3));
+                    c.setTipo(rs.getString(4));
+                    c.setCategoria(Categoria.valueOf(rs.getString(5)));
+                    listaVehiculo.add(c);
                 }else if("Moto".equals(rs.getString(4))){
                     v = new Moto();
+                    v.setIdentificador(rs.getInt(1));
+                    v.setDescripcion(rs.getString(2));
+                    v.setPrecioHora(rs.getDouble(3));
+                    v.setTipo(rs.getString(4));
+                    listaVehiculo.add(v);
                 }else{
                     v = new Bicicleta();
+                    v.setIdentificador(rs.getInt(1));
+                    v.setDescripcion(rs.getString(2));
+                    v.setPrecioHora(rs.getDouble(3));
+                    v.setTipo(rs.getString(4));
+                    listaVehiculo.add(v);
                 }
-//                c.setId(rs.getInt(1));
-//                c.setDni(rs.getString(2));
-//                c.setNombre(rs.getString(3));
-//                c.setFechaNacimiento(rs.getDate(4));
-//                listaVehiculo.add(v);
             }
-   
         }catch (Exception e){
           e.printStackTrace();} 
         return listaVehiculo;
