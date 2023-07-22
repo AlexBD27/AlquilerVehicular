@@ -22,7 +22,7 @@ public class PresentadorLogin {
         cliente.setDni(dni);
     }
     
-    public void iniciarSesion(){
-    
+    public void iniciarSesion(String dnibuscado){
+        cliente.iniciarSesion(dnibuscado);
     }
 }

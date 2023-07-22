@@ -1,6 +1,8 @@
 package Dominio;
 
+import AccesoDatos.ClienteDAO;
 import java.util.Date;
+import java.util.List;
 
 public class Cliente {
     private int id;
@@ -48,5 +50,16 @@ public class Cliente {
 
     public void setFechaNacimiento(Date fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
+    }
+    
+    public void iniciarSesion(String dnibuscado){
+        ClienteDAO clienteDao = new ClienteDAO();
+        List<Cliente> listaClientes = clienteDao.listado();
+        
+        for (Cliente cliente : listaClientes){
+            if (cliente.getDni().equals(dnibuscado)){
+                System.out.println("Cuenta encontrada: ");
+            }
+        }
     }
 }
