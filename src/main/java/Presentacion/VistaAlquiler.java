@@ -30,6 +30,13 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener 
         this.CmbBx_tipoVehiculo.addActionListener(this);
         llenarComboBoxTipoVehiculo();
     }
+    
+    public void iniciar() {
+        pack();
+        setLocationRelativeTo(null);
+        setResizable(false);
+        setVisible(true);// visualiza la ventana
+    }
 
     private void llenarComboBoxTipoVehiculo() {
         CmbBx_tipoVehiculo.addItem("Tipo de Vehiculo");
@@ -77,7 +84,7 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener 
         Lbl_vehiculo.setText("Seleccionar Vehiculo:");
         jPanel1.add(Lbl_vehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 170, -1));
 
-        CmbBx_tipoVehiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Carro", "Moto", "Bicicleta", " " }));
+        CmbBx_tipoVehiculo.setActionCommand("Tipo de Vehiculo");
         jPanel1.add(CmbBx_tipoVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 120, 30));
 
         txtFld_horasFacturadas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
