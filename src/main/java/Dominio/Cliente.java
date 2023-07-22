@@ -1,16 +1,12 @@
 package Dominio;
 
-import AccesoDatos.ClienteDAO;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 public class Cliente {
     private int id;
     private String nombre;
     private String dni;
     private Date fechaNacimiento;
-    private boolean dniValido;
     
     public Cliente() {}
 
@@ -53,21 +49,4 @@ public class Cliente {
         this.fechaNacimiento = fechaNacimiento;
     }
     
-    public boolean DniValido(){
-        return dniValido;
-    }
-    
-    public void iniciarSesion(){
-        ClienteDAO clienteDao = new ClienteDAO();
-        List<Cliente> listaClientes = new ArrayList<>();
-        
-        for (Cliente c : listaClientes){
-            if (c.getDni().equals(this.getDni())){
-                dniValido = true;
-            }
-            else {
-                dniValido = false;
-            }
-        }
-    }
 }

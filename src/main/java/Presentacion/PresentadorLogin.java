@@ -4,7 +4,7 @@
  */
 package Presentacion;
 
-import Dominio.Cliente;
+import Dominio.ModeloCliente;
 
 /**
  *
@@ -12,26 +12,26 @@ import Dominio.Cliente;
  */
 public class PresentadorLogin {
     
-    private Cliente cliente = new Cliente();
+    private ModeloCliente mcliente = new ModeloCliente();
     
-    public void setModeloCliente(Cliente cliente){
-        this.cliente = cliente;
+    public void setModeloCliente(ModeloCliente mcliente){
+        this.mcliente = mcliente;
     }
     
     public void setDNI(String dni){
-        cliente.setDni(dni);
+        mcliente.setDni(dni);
     }
     
     public void iniciarSesion(){
-        cliente.iniciarSesion();
+        mcliente.iniciarSesion();
     }
     
     public boolean Acceso(){
-        return cliente.DniValido();
+        return mcliente.DniValido();
     }
     
     public String mensaje(){
-        if (!cliente.DniValido()){
+        if (!mcliente.DniValido()){
             return "DNI invalido";
         } else {
             return "Inicio de Sesion exitoso";
