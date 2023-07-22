@@ -21,6 +21,7 @@ public class VistaLogin extends javax.swing.JFrame {
         lbl_nombre = new javax.swing.JLabel();
         bttn_login = new javax.swing.JButton();
         txtFld_DNI = new javax.swing.JTextField();
+        bttn_registro = new javax.swing.JButton();
         lbl_foto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -54,6 +55,17 @@ public class VistaLogin extends javax.swing.JFrame {
         txtFld_DNI.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtFld_DNI.setPreferredSize(new java.awt.Dimension(71, 30));
 
+        bttn_registro.setBackground(new java.awt.Color(204, 204, 204));
+        bttn_registro.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bttn_registro.setForeground(new java.awt.Color(255, 255, 255));
+        bttn_registro.setText("Registrarse");
+        bttn_registro.setPreferredSize(new java.awt.Dimension(75, 35));
+        bttn_registro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bttn_registroActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnl_loginLayout = new javax.swing.GroupLayout(pnl_login);
         pnl_login.setLayout(pnl_loginLayout);
         pnl_loginLayout.setHorizontalGroup(
@@ -63,7 +75,8 @@ public class VistaLogin extends javax.swing.JFrame {
                 .addGroup(pnl_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbl_nombre)
                     .addComponent(txtFld_DNI, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bttn_login, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(bttn_login, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bttn_registro, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         pnl_loginLayout.setVerticalGroup(
             pnl_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -72,8 +85,11 @@ public class VistaLogin extends javax.swing.JFrame {
                 .addComponent(lbl_nombre)
                 .addGap(18, 18, 18)
                 .addComponent(txtFld_DNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(72, 72, 72)
-                .addComponent(bttn_login, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addComponent(bttn_login, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(bttn_registro, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -108,10 +124,15 @@ public class VistaLogin extends javax.swing.JFrame {
     private void bttn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttn_loginActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_bttn_loginActionPerformed
+
+    private void bttn_registroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttn_registroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bttn_registroActionPerformed
  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bttn_login;
+    private javax.swing.JButton bttn_registro;
     private javax.swing.JLabel lbl_foto;
     private javax.swing.JLabel lbl_nombre;
     private javax.swing.JLabel lbl_unidadMedica;

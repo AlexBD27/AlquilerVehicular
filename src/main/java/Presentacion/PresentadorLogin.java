@@ -4,10 +4,25 @@
  */
 package Presentacion;
 
+import Dominio.Cliente;
+
 /**
  *
  * @author USER
  */
 public class PresentadorLogin {
     
+    private Cliente cliente;
+    
+    public void setModeloCliente(Cliente cliente){
+        this.cliente = cliente;
+    }
+    
+    public void setDNI(String dni){
+        cliente.setDni(dni);
+    }
+    
+    public void iniciarSesion(){
+    
+    }
 }
