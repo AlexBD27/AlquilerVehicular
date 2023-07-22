@@ -4,17 +4,19 @@
  */
 package Presentacion;
 
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author ANGIE
  */
 public class PanelCarro extends javax.swing.JPanel {
 
-    /**
-     * Creates new form Carro
-     */
+    private DefaultTableModel model;
+
     public PanelCarro() {
         initComponents();
+        model = (DefaultTableModel) Tbl_carro.getModel();
     }
 
     /**
@@ -27,7 +29,7 @@ public class PanelCarro extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        Tbl_carro = new javax.swing.JTable();
         TxtFld_buscarCarro = new javax.swing.JTextField();
         Bttn_buscar = new javax.swing.JButton();
 
@@ -35,7 +37,7 @@ public class PanelCarro extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(690, 570));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        Tbl_carro.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -46,7 +48,7 @@ public class PanelCarro extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(Tbl_carro);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 580, -1));
         add(TxtFld_buscarCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 320, 30));
@@ -58,8 +60,9 @@ public class PanelCarro extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Bttn_buscar;
+    private javax.swing.JTable Tbl_carro;
     private javax.swing.JTextField TxtFld_buscarCarro;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+
 }
