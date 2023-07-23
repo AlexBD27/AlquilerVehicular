@@ -19,12 +19,24 @@ public class PresentadorRegistro {
     
     }
     
-    public void setModelo(ModeloCliente mcliente){
+    public ModeloCliente getModeloCliente(){
+        return modeloCliente;
+    }
+    
+    public void setModeloCliente(ModeloCliente mcliente){
         this.modeloCliente = mcliente;
     }
     
-    public void setDatosCliente(String dni, String nombre, Date FechaNacimiento){
-        this.modeloCliente.setDatosCliente(dni, nombre, FechaNacimiento);
+    public void setDNI(String dni){
+        modeloCliente.setDni(dni);
+    }
+    
+    public void setNombre(String nombre){
+        modeloCliente.setNombre(nombre);
+    }
+    
+    public void setFechaNacimiento(Date fechaNacimiento){
+        modeloCliente.setFechaNacimiento(fechaNacimiento);
     }
     
     public void registrar(){

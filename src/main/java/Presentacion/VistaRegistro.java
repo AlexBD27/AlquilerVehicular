@@ -2,6 +2,7 @@ package Presentacion;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Date;
 
 public class VistaRegistro extends javax.swing.JFrame implements ActionListener{
 
@@ -19,9 +20,12 @@ public class VistaRegistro extends javax.swing.JFrame implements ActionListener{
         setResizable(false);
         setVisible(true);
     }
-
+    
     public void actionIngresar(){
-        
+        pGeneral.getpRegistro().setDNI(txtFld_dni.getText());
+        pGeneral.getpRegistro().setNombre(txtFld_nombre.getText());
+//        pGeneral.getpRegistro().setFechaNacimiento(fechaNacimiento);
+        pGeneral.getpRegistro().registrar();
     }
     
     @SuppressWarnings("unchecked")
@@ -38,7 +42,7 @@ public class VistaRegistro extends javax.swing.JFrame implements ActionListener{
         bttn_ingresar = new javax.swing.JButton();
         lbl_fechaNac = new javax.swing.JLabel();
         txtFld_nombre = new javax.swing.JTextField();
-        txtFld_id = new javax.swing.JTextField();
+        txtFld_dni = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -80,8 +84,8 @@ public class VistaRegistro extends javax.swing.JFrame implements ActionListener{
         txtFld_nombre.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtFld_nombre.setPreferredSize(new java.awt.Dimension(71, 30));
 
-        txtFld_id.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtFld_id.setPreferredSize(new java.awt.Dimension(71, 30));
+        txtFld_dni.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtFld_dni.setPreferredSize(new java.awt.Dimension(71, 30));
 
         javax.swing.GroupLayout pnl_loginLayout = new javax.swing.GroupLayout(pnl_login);
         pnl_login.setLayout(pnl_loginLayout);
@@ -93,7 +97,7 @@ public class VistaRegistro extends javax.swing.JFrame implements ActionListener{
                     .addComponent(lbl_nombre)
                     .addComponent(txtFld_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbl_id)
-                    .addComponent(txtFld_id, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtFld_dni, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbl_fechaNac)
                     .addComponent(txtFld_fechanac, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bttn_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -108,7 +112,7 @@ public class VistaRegistro extends javax.swing.JFrame implements ActionListener{
                 .addGap(10, 10, 10)
                 .addComponent(lbl_id)
                 .addGap(10, 10, 10)
-                .addComponent(txtFld_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtFld_dni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addComponent(lbl_fechaNac)
                 .addGap(10, 10, 10)
@@ -158,8 +162,8 @@ public class VistaRegistro extends javax.swing.JFrame implements ActionListener{
     private javax.swing.JLabel lbl_unsLogo;
     private javax.swing.JPanel pnl_header;
     private javax.swing.JPanel pnl_login;
+    private javax.swing.JTextField txtFld_dni;
     private javax.swing.JTextField txtFld_fechanac;
-    private javax.swing.JTextField txtFld_id;
     private javax.swing.JTextField txtFld_nombre;
     // End of variables declaration//GEN-END:variables
 

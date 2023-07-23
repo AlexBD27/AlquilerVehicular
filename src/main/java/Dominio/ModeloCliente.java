@@ -28,7 +28,9 @@ public class ModeloCliente {
     }
 
     public void setDatosCliente(String dni, String nombre, Date fechaNacimiento){
-        cliente.setDatos(dni, nombre, fechaNacimiento);
+        cliente.setDni(dni);
+        cliente.setNombre(nombre);
+        cliente.setFechaNacimiento(fechaNacimiento);
     }
     
     public void setDniValido(boolean dniValido) {
@@ -45,6 +47,14 @@ public class ModeloCliente {
     
     public void setDni(String dni) {
         cliente.setDni(dni);
+    }
+    
+    public void setNombre(String nombre){
+        cliente.setNombre(nombre);
+    }
+    
+    public void setFechaNacimiento(Date fechaNacimiento){
+        cliente.setFechaNacimiento(fechaNacimiento);
     }
     
     //agregar a BD

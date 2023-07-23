@@ -7,6 +7,7 @@ package Presentacion;
 import Dominio.ModeloAlquiler;
 import Dominio.ModeloCliente;
 import Dominio.ModeloVehiculo;
+import java.util.Date;
 
 /**
  *
@@ -17,12 +18,14 @@ public class PresentadorGeneral {
     private PresentadorLogin pLogin;
     private PresentadorAlquiler pAlquiler;
     private PresentadorVehiculo pVehiculo;
+    private PresentadorRegistro pRegistro;
     private static PresentadorGeneral pGeneral;
 
     public PresentadorGeneral() {
         pLogin = new PresentadorLogin();
         pAlquiler = new PresentadorAlquiler();
         pVehiculo = new PresentadorVehiculo();
+        pRegistro = new PresentadorRegistro();
     }
 
     public static PresentadorGeneral getInstancia() {
@@ -60,6 +63,10 @@ public class PresentadorGeneral {
         return pVehiculo;
     }
 
+    public PresentadorRegistro getpRegistro() {
+        return pRegistro;
+    }
+    
     public static PresentadorGeneral getpGeneral() {
         return pGeneral;
     }
@@ -70,6 +77,10 @@ public class PresentadorGeneral {
     
     public void setModeloPresentadorVehiculo(ModeloVehiculo mVehiculo){
         this.pVehiculo.setModeloVehiculo(mVehiculo);
+    }
+    
+    public void setModeloPresentadorRegistro(ModeloCliente mCliente){
+        this.pRegistro.setModeloCliente(mCliente);
     }
     
     public void setModeloPresentadorAlquiler(ModeloAlquiler mAlquiler, ModeloVehiculo mVehiculo, ModeloCliente mCliente){
