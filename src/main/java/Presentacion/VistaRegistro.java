@@ -32,6 +32,8 @@ public class VistaRegistro extends javax.swing.JFrame implements ActionListener{
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
         pGeneral.getpRegistro().setFechaNacimiento(sdf.parse(txtFld_fechanac.getText()));
         pGeneral.getpRegistro().registrar();
+        this.dispose();
+        pGeneral.mostrarVistaLogin();
     }
     
     @SuppressWarnings("unchecked")
