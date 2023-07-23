@@ -26,12 +26,12 @@ public class AlquilerVehicular {
         Connection con = ConnectionSql.getInstancia();
         
         PresentadorGeneral pG = new PresentadorGeneral();
-        VistaLogin v = new VistaLogin(pG);
-        v.iniciar();
-        
-        
-//        VistaAlquiler v = new VistaAlquiler(pG);
+//        VistaLogin v = new VistaLogin(pG);
 //        v.iniciar();
+//        
+//        
+        VistaAlquiler v = new VistaAlquiler(pG);
+        v.iniciar();
         
 //        String fechaStr = "27-07-2003";
 //        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");

@@ -17,10 +17,8 @@ public class PanelCarro extends javax.swing.JPanel {
 
     private DefaultTableModel model;
 
-
     public PanelCarro() {
         initComponents();
-        Tbl_carro = new javax.swing.JTable();
         model = (DefaultTableModel) Tbl_carro.getModel();
         inicializarTabla();
     }

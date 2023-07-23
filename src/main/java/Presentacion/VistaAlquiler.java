@@ -231,11 +231,17 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener,
                     pGeneral.getpAlquiler().setId(idVehiculo);
                 }
             } else if (e.getSource() == pMoto.getTbl_moto().getSelectionModel()) {
-                // Lógica similar para el panel de motos si tienes uno
-                // ...
+                int selectedRow = pMoto.getTbl_moto().getSelectedRow();
+                if (selectedRow != -1) {
+                    int idVehiculo = (int) pMoto.getTbl_moto().getValueAt(selectedRow, 0);
+                    pGeneral.getpAlquiler().setId(idVehiculo);
+                }
             } else if (e.getSource() == pBicicleta.getTbl_bicicleta().getSelectionModel()) {
-                // Lógica similar para el panel de bicicletas si tienes uno
-                // ...
+                int selectedRow = pBicicleta.getTbl_bicicleta().getSelectedRow();
+                if (selectedRow != -1) {
+                    int idVehiculo = (int) pBicicleta.getTbl_bicicleta().getValueAt(selectedRow, 0);
+                    pGeneral.getpAlquiler().setId(idVehiculo);
+                }
             }
         }
     }
