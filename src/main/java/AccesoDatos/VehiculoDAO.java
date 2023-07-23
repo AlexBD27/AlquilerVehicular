@@ -45,7 +45,42 @@ public class VehiculoDAO extends DAO<Vehiculo>{
 
     @Override
     public Vehiculo read(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Vehiculo v = null;
+        sql = "select * from Vehiculo where id_vehiculo = ?";
+        
+        try {
+            ps = this.connect.prepareStatement(sql);
+            ps.setInt(1 , id);
+            rs = ps.executeQuery();
+            
+            if (rs.next()) {
+                if(rs.getString(5)!=null){
+                    v = new Carro();
+                    Carro c = (Carro) v;
+                    c.setIdentificador(rs.getInt(1));
+                    c.setDescripcion(rs.getString(2));
+                    c.setPrecioHora(rs.getDouble(3));
+                    c.setTipo(rs.getString(4));
+                    c.setCategoria(Categoria.valueOf(rs.getString(5)));
+                }else if("Moto".equals(rs.getString(4))){
+                    v = new Moto();
+                    v.setIdentificador(rs.getInt(1));
+                    v.setDescripcion(rs.getString(2));
+                    v.setPrecioHora(rs.getDouble(3));
+                    v.setTipo(rs.getString(4));
+                }else{
+                    v = new Bicicleta();
+                    v.setIdentificador(rs.getInt(1));
+                    v.setDescripcion(rs.getString(2));
+                    v.setPrecioHora(rs.getDouble(3));
+                    v.setTipo(rs.getString(4));
+                }                
+            }
+            
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return v;
     }
 
     @Override
