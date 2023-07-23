@@ -43,6 +43,11 @@ public class PresentadorGeneral {
         vistaRegistro.iniciar();
     }
     
+    public void mostrarVistaLogin(){
+        VistaLogin vistaLogin = new VistaLogin(PresentadorGeneral.getInstancia());
+        vistaLogin.iniciar();
+    }
+    
     public PresentadorLogin getpLogin() {
         return pLogin;
     }

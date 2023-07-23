@@ -4,10 +4,30 @@
  */
 package Presentacion;
 
+import Dominio.ModeloCliente;
+import java.util.Date;
+
 /**
  *
  * @author USER
  */
 public class PresentadorRegistro {
     
+    private ModeloCliente modeloCliente = new ModeloCliente();
+    
+    public PresentadorRegistro(){
+    
+    }
+    
+    public void setModelo(ModeloCliente mcliente){
+        this.modeloCliente = mcliente;
+    }
+    
+    public void setDatosCliente(String dni, String nombre, Date FechaNacimiento){
+        this.modeloCliente.setDatosCliente(dni, nombre, FechaNacimiento);
+    }
+    
+    public void registrar(){
+        modeloCliente.registrarCliente();
+    }
 }

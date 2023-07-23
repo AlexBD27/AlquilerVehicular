@@ -3,6 +3,7 @@ package Dominio;
 
 import AccesoDatos.ClienteDAO;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -26,6 +27,10 @@ public class ModeloCliente {
         this.cliente = cliente;
     }
 
+    public void setDatosCliente(String dni, String nombre, Date fechaNacimiento){
+        cliente.setDatos(dni, nombre, fechaNacimiento);
+    }
+    
     public void setDniValido(boolean dniValido) {
         this.dniValido = dniValido;
     }
@@ -40,6 +45,12 @@ public class ModeloCliente {
     
     public void setDni(String dni) {
         cliente.setDni(dni);
+    }
+    
+    //agregar a BD
+    public void registrarCliente(){
+        ClienteDAO clienteDao = new ClienteDAO(){};
+        clienteDao.create(cliente);
     }
     
     public void iniciarSesion(){

@@ -17,6 +17,12 @@ public class Cliente {
         this.fechaNacimiento = fechaNacimiento;
     }
     
+    public void setDatos(String dni, String nombre, Date fechaNacimiento){
+        this.dni = dni;
+        this.nombre = nombre;
+        this.fechaNacimiento = fechaNacimiento;
+    }
+    
     public int getId() {
         return id;
     }
