@@ -10,6 +10,7 @@ import Dominio.Vehiculo;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
@@ -228,23 +229,37 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener,
                 int selectedRow = pCarro.getTbl_carro().getSelectedRow();
                 if (selectedRow != -1) {
                     int idVehiculo = (int) pCarro.getTbl_carro().getValueAt(selectedRow, 0);
+                    LocalTime hora = LocalTime.now();
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+                    String hora_actual = hora.format(formatter);
                     pGeneral.getpAlquiler().setId(idVehiculo);
+                    pGeneral.getpAlquiler().setHoraRecogida(LocalTime.NOON);
                     txtFld_idVehiculo.setText(String.valueOf(idVehiculo));
+                    txtFld_hora.setText(String.valueOf(hora_actual));
                 }
             } else if (e.getSource() == pMoto.getTbl_moto().getSelectionModel()) {
                 int selectedRow = pMoto.getTbl_moto().getSelectedRow();
                 if (selectedRow != -1) {
                     int idVehiculo = (int) pMoto.getTbl_moto().getValueAt(selectedRow, 0);
+                    LocalTime hora = LocalTime.now();
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+                    String hora_actual = hora.format(formatter);
                     pGeneral.getpAlquiler().setId(idVehiculo);
+                    pGeneral.getpAlquiler().setHoraRecogida(LocalTime.NOON);
                     txtFld_idVehiculo.setText(String.valueOf(idVehiculo));
+                    txtFld_hora.setText(String.valueOf(hora_actual));
                 }
             } else if (e.getSource() == pBicicleta.getTbl_bicicleta().getSelectionModel()) {
                 int selectedRow = pBicicleta.getTbl_bicicleta().getSelectedRow();
                 if (selectedRow != -1) {
                     int idVehiculo = (int) pBicicleta.getTbl_bicicleta().getValueAt(selectedRow, 0);
+                    LocalTime hora = LocalTime.now();
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+                    String hora_actual = hora.format(formatter);
                     pGeneral.getpAlquiler().setId(idVehiculo);
+                    pGeneral.getpAlquiler().setHoraRecogida(LocalTime.NOON);
                     txtFld_idVehiculo.setText(String.valueOf(idVehiculo));
-                    
+                    txtFld_hora.setText(String.valueOf(hora_actual));
                 }
             }
         }
