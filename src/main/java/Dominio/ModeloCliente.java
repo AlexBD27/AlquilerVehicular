@@ -14,6 +14,10 @@ public class ModeloCliente {
     private Cliente cliente;
     private boolean dniValido;
     
+    public ModeloCliente(){
+        cliente = new Cliente();
+    }
+    
     public boolean DniValido(){
         return dniValido;
     }
@@ -24,7 +28,7 @@ public class ModeloCliente {
     
     public void iniciarSesion(){
         ClienteDAO clienteDao = new ClienteDAO();
-        List<Cliente> listaClientes = new ArrayList<>();
+        List<Cliente> listaClientes = clienteDao.listado();
         
         for (Cliente c : listaClientes){
             if (c.getDni().equals(cliente.getDni())){

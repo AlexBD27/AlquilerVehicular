@@ -54,7 +54,6 @@ public class VistaLogin extends javax.swing.JFrame implements ActionListener{
         bttn_registro = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(820, 650));
 
         pnl_header.setBackground(new java.awt.Color(255, 255, 255));
         pnl_header.setPreferredSize(new java.awt.Dimension(1220, 70));
@@ -74,7 +73,7 @@ public class VistaLogin extends javax.swing.JFrame implements ActionListener{
         bttn_login.setBackground(new java.awt.Color(51, 153, 255));
         bttn_login.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         bttn_login.setForeground(new java.awt.Color(255, 255, 255));
-        bttn_login.setText("INICIAR SESION");
+        bttn_login.setText("Iniciar Sesion");
         bttn_login.setPreferredSize(new java.awt.Dimension(75, 35));
         bttn_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

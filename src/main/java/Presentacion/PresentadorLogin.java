@@ -14,6 +14,10 @@ public class PresentadorLogin {
     
     private ModeloCliente mcliente = new ModeloCliente();
     
+    public PresentadorLogin(){
+    
+    }
+    
     public void setModeloCliente(ModeloCliente mcliente){
         this.mcliente = mcliente;
     }
