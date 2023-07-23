@@ -244,6 +244,7 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener,
                     int idVehiculo = (int) pBicicleta.getTbl_bicicleta().getValueAt(selectedRow, 0);
                     pGeneral.getpAlquiler().setId(idVehiculo);
                     txtFld_idVehiculo.setText(String.valueOf(idVehiculo));
+                    
                 }
             }
         }
