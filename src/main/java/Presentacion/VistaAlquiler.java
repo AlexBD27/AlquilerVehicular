@@ -38,6 +38,7 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener,
         this.pMoto = new PanelMoto();
         this.CmbBx_tipoVehiculo.addActionListener(this);
         this.bttn_alquilar.addActionListener(this);
+        this.bttn_cerrarSesion.addActionListener(this);
         llenarComboBoxTipoVehiculo();
 
         pCarro.getTbl_carro().getSelectionModel().addListSelectionListener(this);
@@ -88,7 +89,10 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener,
         pnl_header = new javax.swing.JPanel();
         lbl_unsLogo = new javax.swing.JLabel();
         lbl_unidadMedica = new javax.swing.JLabel();
+        bttn_cerrarSesion = new javax.swing.JButton();
         Pnl_vehiculosBase = new javax.swing.JPanel();
+        Pnl_vehiculosBase1 = new javax.swing.JPanel();
+        Pnl_HistorialCliente = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -154,20 +158,62 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener,
         lbl_unidadMedica.setText("Alquiler de Vehiculos");
         pnl_header.add(lbl_unidadMedica, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, -1, -1));
 
+        bttn_cerrarSesion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bttn_cerrarSesion.setText("Cerrar Sesión");
+        bttn_cerrarSesion.setBorderPainted(false);
+        bttn_cerrarSesion.setContentAreaFilled(false);
+        bttn_cerrarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bttn_cerrarSesion.setPreferredSize(new java.awt.Dimension(250, 70));
+        pnl_header.add(bttn_cerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(995, 0, 225, 70));
+
         getContentPane().add(pnl_header, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
+
+        javax.swing.GroupLayout Pnl_vehiculosBase1Layout = new javax.swing.GroupLayout(Pnl_vehiculosBase1);
+        Pnl_vehiculosBase1.setLayout(Pnl_vehiculosBase1Layout);
+        Pnl_vehiculosBase1Layout.setHorizontalGroup(
+            Pnl_vehiculosBase1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 690, Short.MAX_VALUE)
+        );
+        Pnl_vehiculosBase1Layout.setVerticalGroup(
+            Pnl_vehiculosBase1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 200, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout Pnl_vehiculosBaseLayout = new javax.swing.GroupLayout(Pnl_vehiculosBase);
         Pnl_vehiculosBase.setLayout(Pnl_vehiculosBaseLayout);
         Pnl_vehiculosBaseLayout.setHorizontalGroup(
             Pnl_vehiculosBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 690, Short.MAX_VALUE)
+            .addGroup(Pnl_vehiculosBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(Pnl_vehiculosBaseLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(Pnl_vehiculosBase1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         Pnl_vehiculosBaseLayout.setVerticalGroup(
             Pnl_vehiculosBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 530, Short.MAX_VALUE)
+            .addGap(0, 200, Short.MAX_VALUE)
+            .addGroup(Pnl_vehiculosBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(Pnl_vehiculosBaseLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(Pnl_vehiculosBase1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
-        getContentPane().add(Pnl_vehiculosBase, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 140, 690, 530));
+        getContentPane().add(Pnl_vehiculosBase, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 140, 690, 200));
+
+        javax.swing.GroupLayout Pnl_HistorialClienteLayout = new javax.swing.GroupLayout(Pnl_HistorialCliente);
+        Pnl_HistorialCliente.setLayout(Pnl_HistorialClienteLayout);
+        Pnl_HistorialClienteLayout.setHorizontalGroup(
+            Pnl_HistorialClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 690, Short.MAX_VALUE)
+        );
+        Pnl_HistorialClienteLayout.setVerticalGroup(
+            Pnl_HistorialClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 200, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(Pnl_HistorialCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 390, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -180,8 +226,11 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener,
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> CmbBx_tipoVehiculo;
     private javax.swing.JLabel Lbl_vehiculo;
+    private javax.swing.JPanel Pnl_HistorialCliente;
     private javax.swing.JPanel Pnl_vehiculosBase;
+    private javax.swing.JPanel Pnl_vehiculosBase1;
     private javax.swing.JButton bttn_alquilar;
+    private javax.swing.JButton bttn_cerrarSesion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lbl_horaRecogida;
@@ -223,6 +272,10 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener,
                 pGeneral.getpAlquiler().setCliente();
                 pGeneral.getpAlquiler().setVehiculo();
                 pGeneral.getpAlquiler().alquilar();
+            }
+            case "Cerrar Sesión" -> {
+                this.dispose();
+                pGeneral.mostrarVistaLogin();
             }
         }
     }
