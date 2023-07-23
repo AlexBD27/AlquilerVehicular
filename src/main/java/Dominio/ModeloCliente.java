@@ -17,6 +17,22 @@ public class ModeloCliente {
     public ModeloCliente(){
         cliente = new Cliente();
     }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public void setDniValido(boolean dniValido) {
+        this.dniValido = dniValido;
+    }
+
+    public boolean isDniValido() {
+        return dniValido;
+    }
     
     public boolean DniValido(){
         return dniValido;
@@ -33,6 +49,7 @@ public class ModeloCliente {
         for (Cliente c : listaClientes){
             if (c.getDni().equals(cliente.getDni())){
                 dniValido = true;
+                setCliente(c);
                 break;
             }
             else {

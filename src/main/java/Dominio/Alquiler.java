@@ -5,8 +5,8 @@ import java.time.LocalTime;
 
 public class Alquiler {
     private int id;
-    private Vehiculo vehiculoAlquilado;
-    private Cliente cliente;
+    private Vehiculo vehiculoAlquilado = new Bicicleta();
+    private Cliente cliente = new Cliente();
     private LocalTime horaRecogida;
     private int numeroHorasFacturadas;
     

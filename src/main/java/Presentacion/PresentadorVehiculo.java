@@ -49,6 +49,10 @@ public class PresentadorVehiculo {
     public void setDatosVehiculoBicicleta(String descripcion) {
         modeloVehiculo.setDatosBicicleta(descripcion);
     }
+    
+    public void setVehiculo(int id){
+        modeloVehiculo.setVehiculo(id);
+    }
 
     public List<Carro> obtenerCarros() {
         return modeloVehiculo.obtenerCarros();

@@ -4,6 +4,10 @@
  */
 package Presentacion;
 
+import Dominio.ModeloAlquiler;
+import Dominio.ModeloCliente;
+import Dominio.ModeloVehiculo;
+
 /**
  *
  * @author USER
@@ -53,6 +57,20 @@ public class PresentadorGeneral {
 
     public static PresentadorGeneral getpGeneral() {
         return pGeneral;
+    }
+    
+    public void setModeloPresentadorLogin(ModeloCliente mCliente){
+        this.pLogin.setModeloCliente(mCliente);
+    }
+    
+    public void setModeloPresentadorVehiculo(ModeloVehiculo mVehiculo){
+        this.pVehiculo.setModeloVehiculo(mVehiculo);
+    }
+    
+    public void setModeloPresentadorAlquiler(ModeloAlquiler mAlquiler, ModeloVehiculo mVehiculo, ModeloCliente mCliente){
+        this.pAlquiler.setModeloAlquiler(mAlquiler);
+        this.pAlquiler.setModeloCliente(mCliente);
+        this.pAlquiler.setModeloVehiculo(mVehiculo);
     }
 
 }

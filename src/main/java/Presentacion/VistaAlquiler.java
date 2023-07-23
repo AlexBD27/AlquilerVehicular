@@ -37,6 +37,7 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener,
         this.pBicicleta = new PanelBicicleta();
         this.pMoto = new PanelMoto();
         this.CmbBx_tipoVehiculo.addActionListener(this);
+        this.bttn_alquilar.addActionListener(this);
         llenarComboBoxTipoVehiculo();
 
         pCarro.getTbl_carro().getSelectionModel().addListSelectionListener(this);
@@ -217,7 +218,11 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener,
                 }
             }
             case "ALQUILAR" -> {
-
+                pGeneral.getpAlquiler().setHoraRecogida(LocalTime.parse(txtFld_hora.getText()));
+                pGeneral.getpAlquiler().setHorasFacturadas(Integer.parseInt(txtFld_horasFacturadas.getText()));
+                pGeneral.getpAlquiler().setCliente();
+                pGeneral.getpAlquiler().setVehiculo();
+                pGeneral.getpAlquiler().alquilar();
             }
         }
     }
@@ -229,6 +234,7 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener,
                 int selectedRow = pCarro.getTbl_carro().getSelectedRow();
                 if (selectedRow != -1) {
                     int idVehiculo = (int) pCarro.getTbl_carro().getValueAt(selectedRow, 0);
+                    pGeneral.getpVehiculo().setVehiculo(idVehiculo);
                     LocalTime hora = LocalTime.now();
                     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
                     String hora_actual = hora.format(formatter);
@@ -241,6 +247,7 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener,
                 int selectedRow = pMoto.getTbl_moto().getSelectedRow();
                 if (selectedRow != -1) {
                     int idVehiculo = (int) pMoto.getTbl_moto().getValueAt(selectedRow, 0);
+                    pGeneral.getpVehiculo().setVehiculo(idVehiculo);
                     LocalTime hora = LocalTime.now();
                     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
                     String hora_actual = hora.format(formatter);
@@ -253,6 +260,7 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener,
                 int selectedRow = pBicicleta.getTbl_bicicleta().getSelectedRow();
                 if (selectedRow != -1) {
                     int idVehiculo = (int) pBicicleta.getTbl_bicicleta().getValueAt(selectedRow, 0);
+                    pGeneral.getpVehiculo().setVehiculo(idVehiculo);
                     LocalTime hora = LocalTime.now();
                     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
                     String hora_actual = hora.format(formatter);

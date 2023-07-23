@@ -13,7 +13,7 @@ import java.util.*;
  */
 public class ModeloVehiculo {
 
-    private Vehiculo vehiculo;
+    private Vehiculo vehiculo = new Bicicleta();
     private Carro carroTmp;
     private Moto motoTmp;
     private Bicicleta bicicletatmp;
@@ -29,6 +29,11 @@ public class ModeloVehiculo {
 
     public void setVehiculo(Vehiculo vehiculo) {
         this.vehiculo = vehiculo;
+    }
+    
+    public void setVehiculo(int id){
+        VehiculoDAO vehiculoDAO = new VehiculoDAO();
+        this.vehiculo = vehiculoDAO.read(id);
     }
 
     public Carro getCarroTmp() {

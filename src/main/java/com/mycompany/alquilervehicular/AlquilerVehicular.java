@@ -5,6 +5,9 @@ package com.mycompany.alquilervehicular;
 import AccesoDatos.ClienteDAO;
 import AccesoDatos.ConnectionSql;
 import Dominio.Cliente;
+import Dominio.ModeloAlquiler;
+import Dominio.ModeloCliente;
+import Dominio.ModeloVehiculo;
 import Presentacion.PresentadorGeneral;
 import Presentacion.VistaAlquiler;
 import Presentacion.VistaLogin;
@@ -25,8 +28,13 @@ public class AlquilerVehicular {
         
         Connection con = ConnectionSql.getInstancia();
         
-        PresentadorGeneral pG = new PresentadorGeneral();
-        VistaLogin v = new VistaLogin(pG);
+        
+        ModeloCliente mCliente = new ModeloCliente();
+        ModeloVehiculo mVehiculo = new ModeloVehiculo();
+        PresentadorGeneral.getInstancia().setModeloPresentadorLogin(mCliente);
+        PresentadorGeneral.getInstancia().setModeloPresentadorVehiculo(mVehiculo);
+        PresentadorGeneral.getInstancia().setModeloPresentadorAlquiler(new ModeloAlquiler(), mVehiculo, mCliente);
+        VistaLogin v = new VistaLogin(PresentadorGeneral.getInstancia());
         v.iniciar();
 //        
 //        

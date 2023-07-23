@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 
 public class AlquilerDAO extends DAO<Alquiler>{
     
-    private Connection conector;
+    //private Connection conector;
     private String sql;
     private PreparedStatement ps;
     private ResultSet rs;
@@ -25,10 +25,12 @@ public class AlquilerDAO extends DAO<Alquiler>{
         sql = "insert into Alquiler (id_vehiculo,id_cliente, hora_recojo, cantidad_horas) values (?,?,?,?)";
         
         try {
-            ps = conector.prepareStatement(sql);
+            ps = this.connect.prepareStatement(sql);
             
             ps.setInt(1 , obj.getVehiculoAlquilado().getIdentificador());
+            System.out.println("id vehiculo: "+obj.getVehiculoAlquilado().getIdentificador() );
             ps.setInt(2 , obj.getCliente().getId());
+            System.out.println("id cliente: "+obj.getCliente().getId());
             LocalTime horaRecogida = obj.getHoraRecogida();
             java.sql.Time sqlTime = java.sql.Time.valueOf(horaRecogida);
             ps.setTime(3 , sqlTime);
@@ -50,7 +52,7 @@ public class AlquilerDAO extends DAO<Alquiler>{
         sql = "select id_alquiler, id_vehiculo, id_cliente, hora_recojo, cantidad_horas from Alquiler where id_alquiler = ?";
         
         try {
-            ps = conector.prepareStatement(sql);
+            ps = this.connect.prepareStatement(sql);
             ps.setInt(1 , id);
             rs = ps.executeQuery();
             
@@ -83,12 +85,13 @@ public class AlquilerDAO extends DAO<Alquiler>{
     private void ejecutarActualizacion() throws SQLException{
         try {
             ps.executeUpdate();
-            conector.commit();  
+            this.connect.commit();  
             JOptionPane.showMessageDialog(null,"Transacción exitosa","Confirmación",JOptionPane.NO_OPTION);                          
             } 
         catch (SQLException ex) {
-            conector.rollback();
-            JOptionPane.showMessageDialog(null,"Transacción NO exitosa","Error...",JOptionPane.NO_OPTION);              
+            this.connect.rollback();
+            JOptionPane.showMessageDialog(null,"Transacción NO exitosa"+ ex.getMessage(),"Error...",JOptionPane.NO_OPTION);
+            
         } finally {
             if (ps != null){
                 ps.close();
