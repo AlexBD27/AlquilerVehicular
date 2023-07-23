@@ -59,8 +59,8 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener,
     }
 
     public void setDatosAlquiler() {
-        pGeneral.getpAlquiler().setHoraRecogida(LocalTime.parse(txtFld_hora.getText()));
-        pGeneral.getpAlquiler().setHorasFacturadas(Integer.parseInt(txtFld_horasFacturadas.getText()));
+        //pGeneral.getpAlquiler().setHoraRecogida(LocalTime.parse(txtFld_hora.getText()));
+        //pGeneral.getpAlquiler().setHorasFacturadas(Integer.parseInt(txtFld_horasFacturadas.getText()));
 
     }
 
@@ -232,8 +232,8 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener,
                     LocalTime hora = LocalTime.now();
                     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
                     String hora_actual = hora.format(formatter);
-                    pGeneral.getpAlquiler().setId(idVehiculo);
-                    pGeneral.getpAlquiler().setHoraRecogida(LocalTime.NOON);
+                    //pGeneral.getpAlquiler().setId(idVehiculo);
+                    //pGeneral.getpAlquiler().setHoraRecogida(LocalTime.NOON);
                     txtFld_idVehiculo.setText(String.valueOf(idVehiculo));
                     txtFld_hora.setText(String.valueOf(hora_actual));
                 }
@@ -244,8 +244,8 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener,
                     LocalTime hora = LocalTime.now();
                     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
                     String hora_actual = hora.format(formatter);
-                    pGeneral.getpAlquiler().setId(idVehiculo);
-                    pGeneral.getpAlquiler().setHoraRecogida(LocalTime.NOON);
+                    //pGeneral.getpAlquiler().setId(idVehiculo);
+                    //pGeneral.getpAlquiler().setHoraRecogida(LocalTime.NOON);
                     txtFld_idVehiculo.setText(String.valueOf(idVehiculo));
                     txtFld_hora.setText(String.valueOf(hora_actual));
                 }
@@ -256,8 +256,8 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener,
                     LocalTime hora = LocalTime.now();
                     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
                     String hora_actual = hora.format(formatter);
-                    pGeneral.getpAlquiler().setId(idVehiculo);
-                    pGeneral.getpAlquiler().setHoraRecogida(LocalTime.NOON);
+                    //pGeneral.getpAlquiler().setId(idVehiculo);
+                    //pGeneral.getpAlquiler().setHoraRecogida(LocalTime.NOON);
                     txtFld_idVehiculo.setText(String.valueOf(idVehiculo));
                     txtFld_hora.setText(String.valueOf(hora_actual));
                 }

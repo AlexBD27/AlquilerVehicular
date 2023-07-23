@@ -1,19 +1,19 @@
 package Dominio;
 
+import AccesoDatos.AlquilerDAO;
 import java.time.LocalTime;
 
-public class LogicaNegocio {
+public class ModeloAlquiler {
 	private Alquiler alquiler;
 
-    public LogicaNegocio() {
+    public ModeloAlquiler() {
         this.alquiler = new Alquiler();
     }
 
-    public void realizarAlquiler(Vehiculo vehiculo, Cliente cliente, LocalTime horaRecogida, int numeroHorasFacturadas) {
-        alquiler.setVehiculoAlquilado(vehiculo);
-        alquiler.setCliente(cliente);
-        alquiler.setHoraRecogida(horaRecogida);
-        alquiler.setNumeroHorasFacturadas(numeroHorasFacturadas);
+    //agregar a BD
+    public void alquilar() {
+        AlquilerDAO alquilerDao = new AlquilerDAO();
+        alquilerDao.create(alquiler);
     }
 
     public int calcularVolumenTotalHorasAlquiladas() {

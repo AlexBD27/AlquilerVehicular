@@ -33,6 +33,7 @@ public class ModeloCliente {
         for (Cliente c : listaClientes){
             if (c.getDni().equals(cliente.getDni())){
                 dniValido = true;
+                break;
             }
             else {
                 dniValido = false;
