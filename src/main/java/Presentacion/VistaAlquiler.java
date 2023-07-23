@@ -229,18 +229,21 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener,
                 if (selectedRow != -1) {
                     int idVehiculo = (int) pCarro.getTbl_carro().getValueAt(selectedRow, 0);
                     pGeneral.getpAlquiler().setId(idVehiculo);
+                    txtFld_idVehiculo.setText(String.valueOf(idVehiculo));
                 }
             } else if (e.getSource() == pMoto.getTbl_moto().getSelectionModel()) {
                 int selectedRow = pMoto.getTbl_moto().getSelectedRow();
                 if (selectedRow != -1) {
                     int idVehiculo = (int) pMoto.getTbl_moto().getValueAt(selectedRow, 0);
                     pGeneral.getpAlquiler().setId(idVehiculo);
+                    txtFld_idVehiculo.setText(String.valueOf(idVehiculo));
                 }
             } else if (e.getSource() == pBicicleta.getTbl_bicicleta().getSelectionModel()) {
                 int selectedRow = pBicicleta.getTbl_bicicleta().getSelectedRow();
                 if (selectedRow != -1) {
                     int idVehiculo = (int) pBicicleta.getTbl_bicicleta().getValueAt(selectedRow, 0);
                     pGeneral.getpAlquiler().setId(idVehiculo);
+                    txtFld_idVehiculo.setText(String.valueOf(idVehiculo));
                 }
             }
         }
