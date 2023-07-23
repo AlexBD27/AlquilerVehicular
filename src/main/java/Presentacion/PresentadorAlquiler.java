@@ -5,8 +5,10 @@
 package Presentacion;
 
 import Dominio.Alquiler;
+import Dominio.Cliente;
 import Dominio.ModeloAlquiler;
 import Dominio.ModeloVehiculo;
+import Dominio.Vehiculo;
 import java.time.LocalTime;
 
 /**
@@ -18,27 +20,28 @@ public class PresentadorAlquiler {
     private ModeloAlquiler modeloAlquiler = new ModeloAlquiler();
     private ModeloVehiculo modeloVehiculo = new ModeloVehiculo();
     
-//    public void setAlquiler(Alquiler alquiler){
-//        this.alquiler = alquiler;
-//    }
-    
     public void setTipoVehiculo (String tipoVehiculo){
         modeloVehiculo.setTipoVehiculo(tipoVehiculo);
     }
     
-//    public void setId (int id){
-//        alquiler.setId(id);
-//    }
+    public void setVehiculo(Vehiculo vehiculoAlquilado){
+        modeloAlquiler.setVehiculo(vehiculoAlquilado);
+    }
     
-//    public void setHoraRecogida(LocalTime HoraRecogida){
-//        modeloAlquiler.setHoraRecogida(HoraRecogida);
-//    }
+    public void setCliente(Cliente cliente){
+        modeloAlquiler.setCliente(cliente);
+    }
     
-//    public void setHorasFacturadas(int numeroHorasFacturadas){
-//        modeloAlquiler.setNumeroHorasFacturadas(numeroHorasFacturadas);
-//    }
+    public void setHoraRecogida(LocalTime HoraRecogida){
+        modeloAlquiler.setHoraRecogida(HoraRecogida);
+    }
     
-//    public void alquilar(){
-//        modeloAlquiler.alquilar();
-//    }
+    public void setHorasFacturadas(int numeroHorasFacturadas){
+        modeloAlquiler.setHorasFacturadas(numeroHorasFacturadas);
+    }
+    
+    public void alquilar(){
+        modeloAlquiler.alquilar();
+    }
+    
 }

@@ -60,8 +60,4 @@ public class Alquiler {
         this.numeroHorasFacturadas = numeroHorasFacturadas;
     }
     
-    public void alquilar(){
-        AlquilerDAO alquilerDao = new AlquilerDAO();
-        alquilerDao.create(this);
-    }
 }

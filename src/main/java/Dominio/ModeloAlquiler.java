@@ -4,12 +4,37 @@ import AccesoDatos.AlquilerDAO;
 import java.time.LocalTime;
 
 public class ModeloAlquiler {
-	private Alquiler alquiler;
-
+    
+    private Alquiler alquiler;
+    
     public ModeloAlquiler() {
         this.alquiler = new Alquiler();
     }
-
+    
+    public Alquiler getAlquiler() {
+    	return this.alquiler;
+    }
+    
+    public void setAlquiler(Alquiler alquiler) {
+    	this.alquiler = alquiler;
+    }
+    
+    public void setVehiculo(Vehiculo vehiculoAlquilado){
+        alquiler.setVehiculoAlquilado(vehiculoAlquilado);
+    }
+    
+    public void setCliente(Cliente cliente){
+        alquiler.setCliente(cliente);
+    }
+    
+    public void setHoraRecogida(LocalTime horaRecogida){
+        alquiler.setHoraRecogida(horaRecogida);
+    }
+    
+    public void setHorasFacturadas(int numeroHorasFacturadas){
+        alquiler.setNumeroHorasFacturadas(numeroHorasFacturadas);
+    }
+    
     //agregar a BD
     public void alquilar() {
         AlquilerDAO alquilerDao = new AlquilerDAO();
@@ -36,11 +61,4 @@ public class ModeloAlquiler {
         return precioHora * alquiler.getNumeroHorasFacturadas();
     }
     
-    public Alquiler getAlquiler() {
-    	return this.alquiler;
-    }
-    
-    public void setAlquiler(Alquiler alquiler) {
-    	this.alquiler = alquiler;
-    }
 }
