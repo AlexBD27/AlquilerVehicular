@@ -16,6 +16,7 @@ import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -29,6 +30,7 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener,
     private PanelMoto pMoto;
 
     private DefaultComboBoxModel comboBoxTipoVehiculo = new DefaultComboBoxModel();
+    private DefaultTableModel modelTablaHistorialAlquiler = new DefaultTableModel();
 
     public VistaAlquiler(PresentadorGeneral p) {
         initComponents();
@@ -40,6 +42,7 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener,
         this.bttn_alquilar.addActionListener(this);
         this.bttn_cerrarSesion.addActionListener(this);
         llenarComboBoxTipoVehiculo();
+        crearEncabezadoTablaHisotrialCliente();
 
         pCarro.getTbl_carro().getSelectionModel().addListSelectionListener(this);
         pMoto.getTbl_moto().getSelectionModel().addListSelectionListener(this);
@@ -60,11 +63,14 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener,
         CmbBx_tipoVehiculo.addItem("Bicicleta");
     }
 
-    public void setDatosAlquiler() {
-        //pGeneral.getpAlquiler().setHoraRecogida(LocalTime.parse(txtFld_hora.getText()));
-        //pGeneral.getpAlquiler().setHorasFacturadas(Integer.parseInt(txtFld_horasFacturadas.getText()));
-
+    private void crearEncabezadoTablaHisotrialCliente() {
+        modelTablaHistorialAlquiler.addColumn("Cliente");
+        modelTablaHistorialAlquiler.addColumn("Vehiculo");
+        modelTablaHistorialAlquiler.addColumn("Hora de recogida");
+        modelTablaHistorialAlquiler.addColumn("Horas facturadas");
+        modelTablaHistorialAlquiler.addColumn("Importe total");
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -92,7 +98,10 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener,
         bttn_cerrarSesion = new javax.swing.JButton();
         Pnl_vehiculosBase = new javax.swing.JPanel();
         Pnl_vehiculosBase1 = new javax.swing.JPanel();
-        Pnl_HistorialCliente = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Tbl_alquiler = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -202,18 +211,20 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener,
 
         getContentPane().add(Pnl_vehiculosBase, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 140, 690, 200));
 
-        javax.swing.GroupLayout Pnl_HistorialClienteLayout = new javax.swing.GroupLayout(Pnl_HistorialCliente);
-        Pnl_HistorialCliente.setLayout(Pnl_HistorialClienteLayout);
-        Pnl_HistorialClienteLayout.setHorizontalGroup(
-            Pnl_HistorialClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 690, Short.MAX_VALUE)
-        );
-        Pnl_HistorialClienteLayout.setVerticalGroup(
-            Pnl_HistorialClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
+        jPanel2.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        getContentPane().add(Pnl_HistorialCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 390, -1, -1));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("HISTORIAL DE ALQUILERES");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, -1, -1));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 380, 580, 40));
+
+        Tbl_alquiler.setModel(modelTablaHistorialAlquiler);
+        jScrollPane1.setViewportView(Tbl_alquiler);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 450, 580, 160));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -226,13 +237,16 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener,
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> CmbBx_tipoVehiculo;
     private javax.swing.JLabel Lbl_vehiculo;
-    private javax.swing.JPanel Pnl_HistorialCliente;
     private javax.swing.JPanel Pnl_vehiculosBase;
     private javax.swing.JPanel Pnl_vehiculosBase1;
+    private javax.swing.JTable Tbl_alquiler;
     private javax.swing.JButton bttn_alquilar;
     private javax.swing.JButton bttn_cerrarSesion;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbl_horaRecogida;
     private javax.swing.JLabel lbl_horasFacturadas;
     private javax.swing.JLabel lbl_idVehiculo;
