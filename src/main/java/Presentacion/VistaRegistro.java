@@ -78,7 +78,7 @@ public class VistaRegistro extends javax.swing.JFrame implements ActionListener{
         bttn_ingresar.setBackground(new java.awt.Color(51, 153, 255));
         bttn_ingresar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         bttn_ingresar.setForeground(new java.awt.Color(255, 255, 255));
-        bttn_ingresar.setText("INGRESAR");
+        bttn_ingresar.setText("REGISTRAR");
         bttn_ingresar.setPreferredSize(new java.awt.Dimension(75, 35));
         bttn_ingresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
