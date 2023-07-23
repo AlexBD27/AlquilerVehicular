@@ -2,7 +2,12 @@ package Presentacion;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JTextField;
 
 public class VistaRegistro extends javax.swing.JFrame implements ActionListener{
 
@@ -21,10 +26,11 @@ public class VistaRegistro extends javax.swing.JFrame implements ActionListener{
         setVisible(true);
     }
     
-    public void actionIngresar(){
+    public void actionIngresar() throws ParseException{
         pGeneral.getpRegistro().setDNI(txtFld_dni.getText());
         pGeneral.getpRegistro().setNombre(txtFld_nombre.getText());
-//        pGeneral.getpRegistro().setFechaNacimiento(fechaNacimiento);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+        pGeneral.getpRegistro().setFechaNacimiento(sdf.parse(txtFld_fechanac.getText()));
         pGeneral.getpRegistro().registrar();
     }
     
@@ -169,6 +175,10 @@ public class VistaRegistro extends javax.swing.JFrame implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        actionIngresar();
+        try {
+            actionIngresar();
+        } catch (ParseException ex) {
+            Logger.getLogger(VistaRegistro.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
