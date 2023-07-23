@@ -16,6 +16,7 @@ public class VistaLogin extends javax.swing.JFrame implements ActionListener{
     }
 
     public void iniciar(){
+        pack();
         setLocationRelativeTo(null);
         setResizable(false);
         setVisible(true);
@@ -29,15 +30,15 @@ public class VistaLogin extends javax.swing.JFrame implements ActionListener{
         JOptionPane.showMessageDialog(null, salida);
     }
     
-    public void actionIniciarSesion(){
-        pGeneral.getpLogin().setDNI(this.getDni());
-        pGeneral.getpLogin().iniciarSesion();
-        mensaje(pGeneral.getpLogin().mensaje());
-        if (pGeneral.getpLogin().Acceso()){
-            this.dispose();
-            //Mostrar vista alquiler
-        }
-    }
+//    public void actionIniciarSesion(){
+//        pGeneral.getpLogin().setDNI(this.getDni());
+//        pGeneral.getpLogin().iniciarSesion();
+//        mensaje(pGeneral.getpLogin().mensaje());
+//        if (pGeneral.getpLogin().Acceso()){
+//            this.dispose();
+//            pGeneral.mostrarVistaAlquiler();
+//        }
+//    }
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -173,6 +174,22 @@ public class VistaLogin extends javax.swing.JFrame implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        actionIniciarSesion();
+        switch(e.getActionCommand()){
+            case "Iniciar Sesion" -> {
+                this.bttn_login.setEnabled(true);
+                pGeneral.getpLogin().setDNI(this.getDni());
+                pGeneral.getpLogin().iniciarSesion();
+                mensaje(pGeneral.getpLogin().mensaje());
+                if (pGeneral.getpLogin().Acceso()){
+                    this.dispose();
+                    pGeneral.mostrarVistaAlquiler();
+                }
+            }
+            case "Registrarse" -> {
+                this.bttn_registro.setEnabled(true);
+                this.dispose();
+                pGeneral.mostrarVistaRegistro();
+            }
+        }
     }
 }

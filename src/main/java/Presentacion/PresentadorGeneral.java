@@ -29,6 +29,16 @@ public class PresentadorGeneral {
         }
     }
 
+    public void mostrarVistaAlquiler(){
+        VistaAlquiler vistaAlquiler = new VistaAlquiler(PresentadorGeneral.getInstancia());
+        vistaAlquiler.iniciar();
+    }
+    
+    public void mostrarVistaRegistro(){
+        VistaRegistro vistaRegistro = new VistaRegistro(PresentadorGeneral.getInstancia());
+        vistaRegistro.iniciar();
+    }
+    
     public PresentadorLogin getpLogin() {
         return pLogin;
     }

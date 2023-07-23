@@ -1,15 +1,29 @@
 package Presentacion;
 
-public class VistaRegistro extends javax.swing.JFrame {
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+public class VistaRegistro extends javax.swing.JFrame implements ActionListener{
 
-    public VistaRegistro() {
+    private PresentadorGeneral pGeneral;
+    
+    public VistaRegistro(PresentadorGeneral pGeneral) {
+        this.pGeneral = pGeneral;
         initComponents();
-
+        this.bttn_ingresar.addActionListener(this);
     }
 
+    public void iniciar() {
+        pack();
+        setLocationRelativeTo(null);
+        setResizable(false);
+        setVisible(true);
+    }
 
-
+    public void actionIngresar(){
+        
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -152,4 +166,9 @@ public class VistaRegistro extends javax.swing.JFrame {
     private javax.swing.JTextField txtFld_id;
     private javax.swing.JTextField txtFld_nombre;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        actionIngresar();
+    }
 }
