@@ -266,44 +266,17 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener,
     }
 
     public void mostrarPanelCarro() {
-        VehiculoDAO vehiculoDAO = new VehiculoDAO();
-        List<Vehiculo> listaVehiculos = vehiculoDAO.listado();
-
-        List<Carro> listaCarros = new ArrayList<>();
-        for (Vehiculo vehiculo : listaVehiculos) {
-            if (vehiculo instanceof Carro) {
-                listaCarros.add((Carro) vehiculo);
-            }
-        }
-
-        pCarro.mostrarVehiculos(listaCarros);
+        List<Carro> listaCarros = pGeneral.getpVehiculo().obtenerCarros();
+        pCarro.mostrarCarros(listaCarros);
     }
 
-    public void mostrarPanelMoto() {
-        VehiculoDAO vehiculoDAO = new VehiculoDAO();
-        List<Vehiculo> listaVehiculos = vehiculoDAO.listado();
-
-        List<Moto> listaMotos = new ArrayList<>();
-        for (Vehiculo vehiculo : listaVehiculos) {
-            if (vehiculo instanceof Moto) {
-                listaMotos.add((Moto) vehiculo);
-            }
-        }
-
+    private void mostrarPanelMoto() {
+        List<Moto> listaMotos = pGeneral.getpVehiculo().obtenerMotos();
         pMoto.mostrarMotos(listaMotos);
     }
 
     public void mostrarPanelBicicleta() {
-        VehiculoDAO vehiculoDAO = new VehiculoDAO();
-        List<Vehiculo> listaVehiculos = vehiculoDAO.listado();
-
-        List<Bicicleta> listaBicicletas = new ArrayList<>();
-        for (Vehiculo vehiculo : listaVehiculos) {
-            if (vehiculo instanceof Bicicleta) {
-                listaBicicletas.add((Bicicleta) vehiculo);
-            }
-        }
-
+        List<Bicicleta> listaBicicletas = pGeneral.getpVehiculo().obtenerBicicletas();
         pBicicleta.mostrarBicicletas(listaBicicletas);
     }
 }

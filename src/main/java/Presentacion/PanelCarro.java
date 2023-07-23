@@ -87,7 +87,7 @@ public class PanelCarro extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
-public void mostrarVehiculos(List<Carro> listaCarros) {
+public void mostrarCarros(List<Carro> listaCarros) {
         DefaultTableModel model = (DefaultTableModel) Tbl_carro.getModel();
         model.setRowCount(0);
 

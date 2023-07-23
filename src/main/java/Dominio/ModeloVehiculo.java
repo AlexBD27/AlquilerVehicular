@@ -4,6 +4,9 @@
  */
 package Dominio;
 
+import AccesoDatos.VehiculoDAO;
+import java.util.*;
+
 /**
  *
  * @author ANGIE
@@ -60,14 +63,16 @@ public class ModeloVehiculo {
         this.idVehiculo = idVehiculo;
     }
 
-public void setTipoVehiculo(String tipoVehiculo) {
-    switch (tipoVehiculo) {
-        case "CARRO" -> this.vehiculo = new Carro();
-        case "MOTO" -> this.vehiculo = new Moto();
-        case "BICICLETA" -> this.vehiculo = new Bicicleta();
+    public void setTipoVehiculo(String tipoVehiculo) {
+        switch (tipoVehiculo) {
+            case "CARRO" ->
+                this.vehiculo = new Carro();
+            case "MOTO" ->
+                this.vehiculo = new Moto();
+            case "BICICLETA" ->
+                this.vehiculo = new Bicicleta();
+        }
     }
-}
-
 
     public void setDatosCarro(String descripcion, Categoria categoria) {
         if (vehiculo instanceof Carro) {
@@ -100,4 +105,47 @@ public void setTipoVehiculo(String tipoVehiculo) {
             bicicletatmp = (Bicicleta) vehiculo;
         }
     }
+// Método para obtener la lista de carros
+
+    public List<Carro> obtenerCarros() {
+        List<Carro> listaCarros = new ArrayList<>();
+        VehiculoDAO vehiculoDAO = new VehiculoDAO();
+        List<Vehiculo> listaTodosLosVehiculos = vehiculoDAO.listado();
+
+        for (Vehiculo vehiculo : listaTodosLosVehiculos) {
+            if (vehiculo instanceof Carro) {
+                listaCarros.add((Carro) vehiculo);
+            }
+        }
+        return listaCarros;
+    }
+
+// Método para obtener la lista de motos
+    public List<Moto> obtenerMotos() {
+        List<Moto> listaMotos = new ArrayList<>();
+        VehiculoDAO vehiculoDAO = new VehiculoDAO();
+        List<Vehiculo> listaTodosLosVehiculos = vehiculoDAO.listado();
+
+        for (Vehiculo vehiculo : listaTodosLosVehiculos) {
+            if (vehiculo instanceof Moto) {
+                listaMotos.add((Moto) vehiculo);
+            }
+        }
+        return listaMotos;
+    }
+
+// Método para obtener la lista de bicicletas
+    public List<Bicicleta> obtenerBicicletas() {
+        List<Bicicleta> listaBicicletas = new ArrayList<>();
+        VehiculoDAO vehiculoDAO = new VehiculoDAO();
+        List<Vehiculo> listaTodosLosVehiculos = vehiculoDAO.listado();
+
+        for (Vehiculo vehiculo : listaTodosLosVehiculos) {
+            if (vehiculo instanceof Bicicleta) {
+                listaBicicletas.add((Bicicleta) vehiculo);
+            }
+        }
+        return listaBicicletas;
+    }
+
 }

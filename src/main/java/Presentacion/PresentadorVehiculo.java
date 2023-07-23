@@ -4,9 +4,9 @@
  */
 package Presentacion;
 
-import Dominio.Categoria;
-import Dominio.ModeloVehiculo;
+import Dominio.*;
 import java.awt.BorderLayout;
+import java.util.List;
 import javax.swing.JPanel;
 
 /**
@@ -37,17 +37,29 @@ public class PresentadorVehiculo {
     public void setTipoVehiculo(String tipoVehiculo) {
         modeloVehiculo.setTipoVehiculo(tipoVehiculo);
     }
-    
-    public void setDatosVehiculoCarro(String descripcion, Categoria categoria){
+
+    public void setDatosVehiculoCarro(String descripcion, Categoria categoria) {
         modeloVehiculo.setDatosCarro(descripcion, categoria);
     }
-    
-    public void setDatosVehiculoMoto(String descripcion){
+
+    public void setDatosVehiculoMoto(String descripcion) {
         modeloVehiculo.setDatosMoto(descripcion);
     }
-    
-    public void setDatosVehiculoBicicleta(String descripcion){
+
+    public void setDatosVehiculoBicicleta(String descripcion) {
         modeloVehiculo.setDatosBicicleta(descripcion);
     }
 
+    public List<Carro> obtenerCarros() {
+        return modeloVehiculo.obtenerCarros();
+    }
+
+
+    public List<Moto> obtenerMotos() {
+        return modeloVehiculo.obtenerMotos();
+    }
+
+    public List<Bicicleta> obtenerBicicletas() {
+        return modeloVehiculo.obtenerBicicletas();
+    }
 }
