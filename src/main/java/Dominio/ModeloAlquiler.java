@@ -46,22 +46,6 @@ public class ModeloAlquiler {
     public int calcularVolumenTotalHorasAlquiladas() {
         return alquiler.getNumeroHorasFacturadas();
     }
-
-    public double calcularVolumenTotalDineroFacturado() {
-        Vehiculo vehiculo = alquiler.getVehiculoAlquilado();
-        double precioHora = 0.0;
-        if (vehiculo instanceof Carro) {
-            Carro carro = (Carro) vehiculo;
-            precioHora = carro.getPrecioHora();
-        } else if (vehiculo instanceof Moto) {
-            Moto moto = (Moto) vehiculo;
-            precioHora = moto.getPrecioHora();
-        } else if (vehiculo instanceof Bicicleta) {
-            Bicicleta bicicleta = (Bicicleta) vehiculo;
-            precioHora = bicicleta.getPrecioHora();
-        }
-        return precioHora * alquiler.getNumeroHorasFacturadas();
-    }
     
     public List<Alquiler> obtenerAlquileres(int id){
         AlquilerDAO alquilerDao = new AlquilerDAO();
