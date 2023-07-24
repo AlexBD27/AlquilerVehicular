@@ -3,7 +3,7 @@ package AccesoDatos;
 
 import Dominio.Alquiler;
 import Dominio.Cliente;
-import java.sql.Connection;
+import Dominio.Vehiculo;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -110,13 +110,23 @@ public class AlquilerDAO extends DAO<Alquiler>{
             
             while(rs.next()){
                 Alquiler alquiler = new Alquiler();
-                alquiler.setId(rs.getInt(1));
-                alquiler.getVehiculoAlquilado().setIdentificador(rs.getInt(2));
-                alquiler.getCliente().setId(rs.getInt(3));
+                alquiler.setId(rs.getInt(1));   
+                
+                VehiculoDAO vDAO = new VehiculoDAO();
+                Vehiculo v = vDAO.read(rs.getInt(2));
+                alquiler.setVehiculoAlquilado(v);
+                //alquiler.getVehiculoAlquilado().setIdentificador(rs.getInt(2));
+                
+                ClienteDAO cDAO = new ClienteDAO();
+                Cliente c = cDAO.read(rs.getInt(3));
+                alquiler.setCliente(c);
+                //alquiler.getCliente().setId(rs.getInt(3));
+                
                 java.sql.Time sqlTime = rs.getTime(4);
                 LocalTime horaRecogida = sqlTime.toLocalTime();
                 alquiler.setHoraRecogida(horaRecogida);
                 alquiler.setNumeroHorasFacturadas(rs.getInt(5));
+                listaAlquiler.add(alquiler);
             }
    
         }catch (Exception e){

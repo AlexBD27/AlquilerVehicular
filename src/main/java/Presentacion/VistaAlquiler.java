@@ -4,14 +4,11 @@
  */
 package Presentacion;
 
-import AccesoDatos.VehiculoDAO;
 import Dominio.*;
-import Dominio.Vehiculo;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.event.ListSelectionEvent;
@@ -41,8 +38,11 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener,
         this.CmbBx_tipoVehiculo.addActionListener(this);
         this.bttn_alquilar.addActionListener(this);
         this.bttn_cerrarSesion.addActionListener(this);
+        this.Tbl_alquiler.setModel(modelTablaHistorialAlquiler);
         llenarComboBoxTipoVehiculo();
         crearEncabezadoTablaHisotrialCliente();
+        System.out.println("Mostrar tabla");
+        mostrarHistorial(pGeneral.getpAlquiler().obtenerAlquileres());
 
         pCarro.getTbl_carro().getSelectionModel().addListSelectionListener(this);
         pMoto.getTbl_moto().getSelectionModel().addListSelectionListener(this);
@@ -69,6 +69,18 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener,
         modelTablaHistorialAlquiler.addColumn("Hora de recogida");
         modelTablaHistorialAlquiler.addColumn("Horas facturadas");
         modelTablaHistorialAlquiler.addColumn("Importe total");
+    }
+    
+    public void mostrarHistorial(List<Alquiler> listaAlquiler){
+        System.out.println(listaAlquiler.size());
+        
+        DefaultTableModel model = (DefaultTableModel) Tbl_alquiler.getModel();
+        model.setRowCount(0);
+        
+        for (Alquiler alquiler : listaAlquiler) {
+            model.addRow(new Object[]{alquiler.getCliente().getNombre(), alquiler.getVehiculoAlquilado().getDescripcion(), alquiler.getHoraRecogida(), alquiler.getNumeroHorasFacturadas(), alquiler.getVehiculoAlquilado().getPrecioHora()*alquiler.getNumeroHorasFacturadas()});
+        }
+
     }
 
 
@@ -286,6 +298,7 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener,
                 pGeneral.getpAlquiler().setCliente();
                 pGeneral.getpAlquiler().setVehiculo();
                 pGeneral.getpAlquiler().alquilar();
+                mostrarHistorial(pGeneral.getpAlquiler().obtenerAlquileres());
             }
             case "Cerrar Sesión" -> {
                 this.dispose();

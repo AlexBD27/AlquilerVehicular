@@ -2,6 +2,8 @@ package Dominio;
 
 import AccesoDatos.AlquilerDAO;
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ModeloAlquiler {
     
@@ -59,6 +61,25 @@ public class ModeloAlquiler {
             precioHora = bicicleta.getPrecioHora();
         }
         return precioHora * alquiler.getNumeroHorasFacturadas();
+    }
+    
+    public List<Alquiler> obtenerAlquileres(int id){
+        AlquilerDAO alquilerDao = new AlquilerDAO();
+        List<Alquiler> lista = alquilerDao.listado();
+        List<Alquiler> alquileresCliente = new ArrayList<>();
+
+        for (Alquiler alquiler : lista) {
+            if (alquiler.getCliente().getId() == id) {
+                alquileresCliente.add(alquiler);
+            }
+        }
+        
+        for (int i = 0; i < alquileresCliente.size(); i++) {
+            System.out.println("Cliente: "+alquileresCliente.get(i).getCliente().getNombre());
+            System.out.println("Vehiculo: "+alquileresCliente.get(i).getVehiculoAlquilado().getDescripcion());
+        }
+        
+        return alquileresCliente;
     }
     
 }

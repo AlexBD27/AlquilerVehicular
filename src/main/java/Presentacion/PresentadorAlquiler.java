@@ -11,6 +11,7 @@ import Dominio.ModeloCliente;
 import Dominio.ModeloVehiculo;
 import Dominio.Vehiculo;
 import java.time.LocalTime;
+import java.util.List;
 
 /**
  *
@@ -45,9 +46,7 @@ public class PresentadorAlquiler {
     public void setModeloCliente(ModeloCliente modeloCliente) {
         this.modeloCliente = modeloCliente;
     }
-    
-    
-    
+        
     public void setTipoVehiculo (String tipoVehiculo){
         modeloVehiculo.setTipoVehiculo(tipoVehiculo);
     }
@@ -70,6 +69,10 @@ public class PresentadorAlquiler {
     
     public void alquilar(){
         modeloAlquiler.alquilar();
+    }
+    
+    public List<Alquiler> obtenerAlquileres(){
+        return modeloAlquiler.obtenerAlquileres(modeloCliente.getCliente().getId());
     }
     
 }

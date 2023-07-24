@@ -1,6 +1,5 @@
 package Dominio;
 
-import AccesoDatos.AlquilerDAO;
 import java.time.LocalTime;
 
 public class Alquiler {
@@ -10,7 +9,8 @@ public class Alquiler {
     private LocalTime horaRecogida;
     private int numeroHorasFacturadas;
     
-    public Alquiler() {}
+    public Alquiler() {
+    }
 
     public Alquiler(int id, Vehiculo vehiculoAlquilado, Cliente cliente, LocalTime horaRecogida, int numeroHorasFacturadas) {
         this.id = id;
