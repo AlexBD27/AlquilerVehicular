@@ -41,7 +41,6 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener,
         this.Tbl_alquiler.setModel(modelTablaHistorialAlquiler);
         llenarComboBoxTipoVehiculo();
         crearEncabezadoTablaHisotrialCliente();
-        System.out.println("Mostrar tabla");
         mostrarHistorial(pGeneral.getpAlquiler().obtenerAlquileres());
 
         pCarro.getTbl_carro().getSelectionModel().addListSelectionListener(this);
@@ -71,9 +70,7 @@ public class VistaAlquiler extends javax.swing.JFrame implements ActionListener,
         modelTablaHistorialAlquiler.addColumn("Importe total");
     }
     
-    public void mostrarHistorial(List<Alquiler> listaAlquiler){
-        System.out.println(listaAlquiler.size());
-        
+    public void mostrarHistorial(List<Alquiler> listaAlquiler){        
         DefaultTableModel model = (DefaultTableModel) Tbl_alquiler.getModel();
         model.setRowCount(0);
         

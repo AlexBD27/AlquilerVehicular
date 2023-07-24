@@ -72,13 +72,7 @@ public class ModeloAlquiler {
             if (alquiler.getCliente().getId() == id) {
                 alquileresCliente.add(alquiler);
             }
-        }
-        
-        for (int i = 0; i < alquileresCliente.size(); i++) {
-            System.out.println("Cliente: "+alquileresCliente.get(i).getCliente().getNombre());
-            System.out.println("Vehiculo: "+alquileresCliente.get(i).getVehiculoAlquilado().getDescripcion());
-        }
-        
+        }        
         return alquileresCliente;
     }
     
